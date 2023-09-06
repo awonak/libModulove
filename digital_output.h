@@ -27,7 +27,7 @@ class DigitalOutput {
         Init(cv_pin);
     }
 
-    // Turn the CV and LED High according to the input state.
+    // Turn the CV and LED on or off according to the input state.
     inline void Update(uint8_t state) {
         if (state == HIGH) High();  // Rising
         if (state == LOW) Low();    // Falling
@@ -39,7 +39,7 @@ class DigitalOutput {
     // Sets the cv output LOW to 0v.
     inline void Low() { update(LOW); }
 
-    // Return the bool representing the on/off state of the output.
+    // Return a bool representing the on/off state of the output.
     inline bool On() { return on_; }
 
    private:

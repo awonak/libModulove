@@ -30,6 +30,7 @@ class Arythmatik {
     /** Initializes the Arduino, and A-RYTH-MATIK hardware.*/
     void Init();
 
+    /** Read the state of the CLK and RST inputs. */
     void ProcessInputs();
 
     Adafruit_SSD1306 display;

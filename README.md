@@ -9,7 +9,7 @@ library into your `~/Arduino/libraries` folder.
 **Include the library as a git submodule to use in your scripts.**
 
 ```bash
-git submodule add https://github.com/awonak/libmodulove.git path/to/your/script
+git submodule add https://github.com/awonak/libmodulove.git <sketch>/src/libmodulove
 ```
 
 **Download the latest release.**
@@ -19,7 +19,7 @@ git submodule add https://github.com/awonak/libmodulove.git path/to/your/script
 ## Example usage
 
 ```cpp
-#include "modulove_arythmatik.h"
+#include "src/libmodulove/arythmatik.h"
 
 using namespace modulove;
 using namespace arythmatik;
@@ -38,7 +38,7 @@ void loop() {
     // Read inputs to determine state.
     hw.ProcessInputs();
 
-    // Advance the counter
+    // Advance the counter on CLK input
     if (hw.Clk.State() == DigitalInput::STATE_RISING) {
         counter = ++counter % OUTPUT_COUNT;
     }

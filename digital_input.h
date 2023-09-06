@@ -18,14 +18,15 @@ class DigitalInput {
     ~DigitalInput() {}
 
     /**
-        Initializes a CV Input object.
-          \param cv_pin gpio pin for the cv output.
-        */
+    Initializes a CV Input object.
+        \param cv_pin gpio pin for the cv output.
+    */
     void Init(uint8_t cv_pin) {
         pinMode(cv_pin, INPUT);
         cv_pin_ = cv_pin;
     }
 
+    /** Read the state of the cv input. */
     void Process() {
         old_read_ = read_;
         read_ = digitalRead(cv_pin_);
