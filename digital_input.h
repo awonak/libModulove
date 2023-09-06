@@ -1,4 +1,7 @@
-#pragma once
+#ifndef DIGITAL_INPUT_H
+#define DIGITAL_INPUT_H
+
+#include <Arduino.h>
 
 namespace modulove {
 
@@ -51,3 +54,5 @@ class DigitalInput {
 };
 
 }  // namespace modulove
+
+#endif

@@ -1,4 +1,7 @@
-#pragma once
+#ifndef DIGITAL_OUTPUT_H
+#define DIGITAL_OUTPUT_H
+
+#include <Arduino.h>
 
 namespace modulove {
 
@@ -54,3 +57,5 @@ class DigitalOutput {
 };
 
 }  // namespace modulove
+
+#endif

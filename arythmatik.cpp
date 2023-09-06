@@ -4,22 +4,11 @@ using namespace modulove;
 
 void Arythmatik::Init() {
     InitInputs();
-    InitEncoder();
     InitOutputs();
     InitDisplay();
 
     // CLOCK LED (DIGITAL)
     pinMode(CLOCK_LED, OUTPUT);
-}
-
-void Arythmatik::InitInputs() {
-    Clk.Init(CLK_PIN);
-    Rst.Init(RST_PIN);
-}
-
-void Arythmatik::InitEncoder() {
-    // Rotary encoder and push switch.
-    SimpleRotary encoder(ENCODER_PIN1, ENCODER_PIN2, ENCODER_SW_PIN);
 }
 
 void Arythmatik::InitDisplay() {
@@ -31,6 +20,12 @@ void Arythmatik::InitDisplay() {
     display.setTextColor(WHITE);
     display.display();
 }
+
+void Arythmatik::InitInputs() {
+    Clk.Init(CLK_PIN);
+    Rst.Init(RST_PIN);
+}
+
 
 void Arythmatik::InitOutputs() {
     // Initialize each of the outputs with it's GPIO pins and probability.

@@ -1,4 +1,5 @@
-#pragma once
+#ifndef ARYTHMATIK_PERIPHERIALS_H
+#define ARYTHMATIK_PERIPHERIALS_H
 
 namespace modulove {
 namespace arythmatik {
@@ -34,3 +35,5 @@ const uint8_t OUTPUT_COUNT = 6;
 
 }  // namespace arythmatik
 }  // namespace modulove
+
+#endif

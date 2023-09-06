@@ -1,4 +1,7 @@
-#pragma once
+#ifndef ARYTHMATIK_H
+#define ARYTHMATIK_H
+
+#include <Arduino.h>
 
 // Oled setting
 #include <Adafruit_GFX.h>
@@ -37,9 +40,10 @@ class Arythmatik {
     DigitalInput Rst;
 
    private:
-    void InitInputs();
-    void InitEncoder();
     void InitDisplay();
+    void InitInputs();
     void InitOutputs();
 };
 }  // namespace modulove
+
+#endif
