@@ -1,3 +1,14 @@
+/**
+ * @file arythmatik.cpp
+ * @author Adam Wonak (https://github.com/awonak)
+ * @brief Library for building custom scripts for Modulove modules.
+ * @version 0.1
+ * @date 2023-09-06
+ * 
+ * @copyright Copyright (c) 2023
+ * 
+ */
+
 #include "arythmatik.h"
 
 using namespace modulove;

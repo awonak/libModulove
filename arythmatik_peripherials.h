@@ -1,3 +1,13 @@
+/**
+ * @file arythmatik_peripherials.h
+ * @author Adam Wonak (https://github.com/awonak)
+ * @brief Arduino pin definitions for the Modulove A-RYTH-MATIC module.
+ * @version 0.1
+ * @date 2023-09-06
+ * 
+ * @copyright Copyright (c) 2023
+ * 
+ */
 #ifndef ARYTHMATIK_PERIPHERIALS_H
 #define ARYTHMATIK_PERIPHERIALS_H
 
