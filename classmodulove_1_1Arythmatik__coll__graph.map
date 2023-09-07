@@ -1,0 +1,5 @@
+<map id="modulove::Arythmatik" name="modulove::Arythmatik">
+<area shape="rect" id="node1" title="Hardware abstraction wrapper for A&#45;RYTH&#45;MATIK module." alt="" coords="107,109,275,136"/>
+<area shape="rect" id="node2" href="$classmodulove_1_1DigitalInput.html" title=" " alt="" coords="5,5,176,32"/>
+<area shape="rect" id="node3" href="$classmodulove_1_1DigitalOutput.html" title=" " alt="" coords="201,5,383,32"/>
+</map>

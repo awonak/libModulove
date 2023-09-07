@@ -1,0 +1,13 @@
+<map id="arythmatik.cpp" name="arythmatik.cpp">
+<area shape="rect" id="node1" title="Library for building custom scripts for Modulove modules." alt="" coords="429,5,551,32"/>
+<area shape="rect" id="node2" href="$arythmatik_8h_source.html" title=" " alt="" coords="437,80,543,107"/>
+<area shape="rect" id="node3" title=" " alt="" coords="921,229,1005,256"/>
+<area shape="rect" id="node4" title=" " alt="" coords="25,155,145,181"/>
+<area shape="rect" id="node5" title=" " alt="" coords="169,155,320,181"/>
+<area shape="rect" id="node6" title=" " alt="" coords="344,155,433,181"/>
+<area shape="rect" id="node7" title=" " alt="" coords="458,155,522,181"/>
+<area shape="rect" id="node8" title=" " alt="" coords="546,155,666,181"/>
+<area shape="rect" id="node9" href="$arythmatik__peripherials_8h.html" title="Arduino pin definitions for the Modulove A&#45;RYTH&#45;MATIC module." alt="" coords="691,155,881,181"/>
+<area shape="rect" id="node10" href="$digital__input_8h.html" title="Class for interacting with trigger / gate inputs." alt="" coords="906,155,1021,181"/>
+<area shape="rect" id="node11" href="$digital__output_8h.html" title="Class for interacting with trigger / gate outputs." alt="" coords="1045,155,1169,181"/>
+</map>
