@@ -2,7 +2,7 @@
  * @file arythmatik.cpp
  * @author Adam Wonak (https://github.com/awonak)
  * @brief Library for building custom scripts for Modulove modules.
- * @version 0.1
+ * @version 0.2
  * @date 2023-09-06
  * 
  * @copyright Copyright (c) 2023
@@ -33,8 +33,8 @@ void Arythmatik::InitDisplay() {
 }
 
 void Arythmatik::InitInputs() {
-    Clk.Init(CLK_PIN);
-    Rst.Init(RST_PIN);
+    clk.Init(CLK_PIN);
+    rst.Init(RST_PIN);
 }
 
 
@@ -49,13 +49,13 @@ void Arythmatik::InitOutputs() {
 }
 
 void Arythmatik::ProcessInputs() {
-    Clk.Process();
-    Rst.Process();
+    clk.Process();
+    rst.Process();
 
     // Clock In LED indicator mirrors the clock input.
-    if (Clk.State() == DigitalInput::STATE_RISING) {
+    if (clk.State() == DigitalInput::STATE_RISING) {
         digitalWrite(CLOCK_LED, HIGH);
-    } else if (Clk.State() == DigitalInput::STATE_FALLING) {
+    } else if (clk.State() == DigitalInput::STATE_FALLING) {
         digitalWrite(CLOCK_LED, LOW);
     }
 }
