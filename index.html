@@ -66,13 +66,17 @@ $(function() {
 <div class="title">Modulove Hardware Abstraction Library </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="md_README"></a> This package provides a library for creating A-RYTH-MATIK scripts.</p>
-<p>There are two ways to install. Include the library directly in your script repo as a git submodule, or download the latest release zip and extract the library into your <code>~/Arduino/libraries</code> folder.</p>
+<div class="textblock"><p><a class="anchor" id="md_README"></a> This package provides a library for creating scripts for the Modulove <a href="https://modulove.io/arythmatik/">A-RYTH-MATIK</a> eurorack module.</p>
+<p>Full Doxyen generated documentation of the library can be found here: <a href="https://awonak.github.io/libModulove/">https://awonak.github.io/libModulove/</a>.</p>
+<h1><a class="anchor" id="autotoc_md1"></a>
+Installation instructions</h1>
+<p>There are two ways to install. Include the library directly in your script repo as a <b>git submodule</b>, or <b>download</b> the latest release zip and extract the library into your <code>~/Arduino/libraries</code> folder.</p>
 <p><b>Include the library as a git submodule to use in your scripts.</b></p>
+<p>In order to include the library source code directly in your repo as a git submodule, you must follow the Arduino Sketch specifications and place the code in the location <code>&lt;sketch&gt;/src/&lt;library&gt;</code>. This is documented in the <a href="https://arduino.github.io/arduino-cli/0.34/sketch-specification/#src-subfolder">src subfolder</a> section of the Arduino Sketch Specification.</p>
 <div class="fragment"><div class="line">git submodule add https://github.com/awonak/libmodulove.git &lt;sketch&gt;/src/libmodulove</div>
 </div><!-- fragment --><p><b>Download the latest release.</b></p>
 <p>[TODO]</p>
-<h1><a class="anchor" id="autotoc_md1"></a>
+<h1><a class="anchor" id="autotoc_md2"></a>
 Example usage</h1>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;src/libmodulove/arythmatik.h&quot;</span></div>
 <div class="line"> </div>
@@ -90,14 +94,29 @@ Example usage</h1>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> loop() {</div>
-<div class="line">    <span class="comment">// Read inputs to determine state.</span></div>
+<div class="line">    <span class="comment">// Read cv inputs and process encoder state to determine state for this loop.</span></div>
 <div class="line">    hw.ProcessInputs();</div>
 <div class="line"> </div>
 <div class="line">    <span class="comment">// Advance the counter on CLK input</span></div>
-<div class="line">    <span class="keywordflow">if</span> (hw.Clk.State() == DigitalInput::STATE_RISING) {</div>
+<div class="line">    <span class="keywordflow">if</span> (hw.clk.State() == DigitalInput::STATE_RISING) {</div>
 <div class="line">        counter = ++counter % OUTPUT_COUNT;</div>
 <div class="line">    }</div>
 <div class="line"> </div>
+<div class="line">    <span class="comment">// Read encoder for a change in direction and update the counter.</span></div>
+<div class="line">    <a class="code" href="classmodulove_1_1Encoder.html#a9a942b288a864d774fc206347b3bfaf3">Encoder::Direction</a> dir = hw.encoder.rotate();</div>
+<div class="line">    <span class="keywordflow">if</span> (dir == Encoder::DIRECTION_INCREMENT) {</div>
+<div class="line">        counter = min(++counter, OUTPUT_COUNT);</div>
+<div class="line">    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (dir == Encoder::DIRECTION_DECREMENT) {</div>
+<div class="line">        counter = max(--counter, 0);</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// Reset the counter back to 0 when encoder switch pressed.</span></div>
+<div class="line">    <a class="code" href="classmodulove_1_1Encoder.html#a880b26a3fefd56b81f393ad8835878da">Encoder::PressType</a> press = hw.encoder.Pressed();</div>
+<div class="line">    <span class="keywordflow">if</span> (press == Encoder::PRESS_SHORT) {</div>
+<div class="line">        counter = 0;</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// Activate the current counter output.</span></div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; OUTPUT_COUNT; i++) {</div>
 <div class="line">        (i == counter)</div>
 <div class="line">            ? hw.outputs[i].High()</div>
@@ -110,7 +129,9 @@ Example usage</h1>
 <div class="line">    hw.display.println(<span class="stringliteral">&quot;Counter: &quot;</span> + String(counter));</div>
 <div class="line">    hw.display.display();</div>
 <div class="line">}</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md2"></a>
+<div class="ttc" id="aclassmodulove_1_1Encoder_html_a880b26a3fefd56b81f393ad8835878da"><div class="ttname"><a href="classmodulove_1_1Encoder.html#a880b26a3fefd56b81f393ad8835878da">modulove::Encoder::PressType</a></div><div class="ttdeci">PressType</div><div class="ttdoc">Enum for type of switch press.</div><div class="ttdef"><b>Definition:</b> encoder.h:33</div></div>
+<div class="ttc" id="aclassmodulove_1_1Encoder_html_a9a942b288a864d774fc206347b3bfaf3"><div class="ttname"><a href="classmodulove_1_1Encoder.html#a9a942b288a864d774fc206347b3bfaf3">modulove::Encoder::Direction</a></div><div class="ttdeci">Direction</div><div class="ttdoc">Enum constants for encoder rotation increment/decrement state.</div><div class="ttdef"><b>Definition:</b> encoder.h:26</div></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md3"></a>
 Third-party Arduino Libraries</h2>
 <ul>
 <li><a href="https://github.com/adafruit/Adafruit-GFX-Library">Adafruit-GFX-Library</a></li>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['_7earythmatik_39',['~Arythmatik',['../classmodulove_1_1Arythmatik.html#a5207137670427c0caee37e9f4c6752d4',1,'modulove::Arythmatik']]]
+  ['update_52',['Update',['../classmodulove_1_1DigitalOutput.html#ab31dfb2ad9c0e9db3aee02f319f6a14d',1,'modulove::DigitalOutput']]]
 ];
