@@ -42,6 +42,16 @@ class Encoder {
     /// @brief Get the rotary direction if it has turned.
     /// @return Direction of turn or unchanged.
     Direction Rotate() {
+#ifdef ENCODER_REVERSED
+        // Reversed (counter clockwise)
+        return rotate_ccw();
+#else
+        // Default (clockwise)
+        return rotate_cw();
+#endif
+    }
+
+    Direction rotate_cw() {
         switch (encoder_.rotate()) {
             case 1:
                 return DIRECTION_INCREMENT;
@@ -52,16 +62,26 @@ class Encoder {
         }
     }
 
+    Direction rotate_ccw() {
+        switch (encoder_.rotate()) {
+            case 1:
+                return DIRECTION_DECREMENT;
+            case 2:
+                return DIRECTION_INCREMENT;
+            default:
+                return DIRECTION_UNCHANGED;
+        }
+    }
+
     /// @return Return the press type if the switch was released this loop.
     PressType Pressed() {
-        switch (_press())
-        {
-        case 1:
-            return PRESS_SHORT;
-        case 2:
-            return PRESS_LONG;
-        default:
-            return PRESS_NONE;
+        switch (_press()) {
+            case 1:
+                return PRESS_SHORT;
+            case 2:
+                return PRESS_LONG;
+            default:
+                return PRESS_NONE;
         }
     }
 
