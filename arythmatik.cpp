@@ -26,6 +26,11 @@ void Arythmatik::InitDisplay() {
     // OLED Display configuration.
     display.begin(SSD1306_SWITCHCAPVCC, OLED_ADDRESS);
     delay(1000);
+    #ifdef PANEL_USD
+    display.setRotation(2);  // 180 degree rotation for upside-down use
+    #else
+    display.setRotation(0);  // Normal orientation
+    #endif
     display.clearDisplay();
     display.setTextSize(1);
     display.setTextColor(WHITE);
