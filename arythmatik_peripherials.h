@@ -4,9 +4,9 @@
  * @brief Arduino pin definitions for the Modulove A-RYTH-MATIC module.
  * @version 0.1
  * @date 2023-09-06
- * 
+ *
  * @copyright Copyright (c) 2023
- * 
+ *
  */
 #ifndef ARYTHMATIK_PERIPHERIALS_H
 #define ARYTHMATIK_PERIPHERIALS_H
@@ -23,8 +23,14 @@ namespace arythmatik {
 #define ENCODER_PIN1 2
 #define ENCODER_PIN2 3
 #define ENCODER_SW_PIN 12
+
+#ifdef ROTATE_PANEL
 #define CLK_PIN 13
 #define RST_PIN 11
+#else
+#define CLK_PIN 11
+#define RST_PIN 13
+#endif
 
 // Output Pins
 #define CLOCK_LED 4

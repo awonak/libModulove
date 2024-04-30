@@ -4,9 +4,9 @@
  * @brief Library for building custom scripts for Modulove modules.
  * @version 0.2
  * @date 2023-09-06
- * 
+ *
  * @copyright Copyright (c) 2023
- * 
+ *
  */
 
 #include "arythmatik.h"
@@ -29,6 +29,9 @@ void Arythmatik::InitDisplay() {
     display.clearDisplay();
     display.setTextSize(1);
     display.setTextColor(WHITE);
+#ifdef ROTATE_PANEL
+    display.setRotation(2);  // 180 degree rotation for upside-down use
+#endif
     display.display();
 }
 
@@ -36,7 +39,6 @@ void Arythmatik::InitInputs() {
     clk.Init(CLK_PIN);
     rst.Init(RST_PIN);
 }
-
 
 void Arythmatik::InitOutputs() {
     // Initialize each of the outputs with it's GPIO pins and probability.
