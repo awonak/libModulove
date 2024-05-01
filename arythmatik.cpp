@@ -29,10 +29,10 @@ void Arythmatik::InitDisplay() {
     display.clearDisplay();
     display.setTextSize(1);
     display.setTextColor(WHITE);
-#ifdef ROTATE_PANEL
-    display.setRotation(2);  // 180 degree rotation for upside-down use
-#endif
     display.display();
+#ifdef ROTATE_PANEL
+    display.setRotation(2);
+#endif
 }
 
 void Arythmatik::InitInputs() {
