@@ -12,35 +12,41 @@
 #include "arythmatik.h"
 
 using namespace modulove;
+using namespace arythmatik;
 
-void Arythmatik::Init() {
-    InitInputs();
-    InitOutputs();
-    InitDisplay();
+void Arythmatik::Init(Config config) {
+    InitInputs(config);
+    InitOutputs(config);
+    InitDisplay(config);
 
     // CLOCK LED (DIGITAL)
     pinMode(CLOCK_LED, OUTPUT);
 }
 
-void Arythmatik::InitDisplay() {
+void Arythmatik::InitDisplay(Config config) {
     // OLED Display configuration.
     display.begin(SSD1306_SWITCHCAPVCC, OLED_ADDRESS);
     delay(1000);
     display.clearDisplay();
     display.setTextSize(1);
     display.setTextColor(WHITE);
-#ifdef ROTATE_PANEL
-    display.setRotation(2);  // 180 degree rotation for upside-down use
-#endif
     display.display();
+    (config.RotatePanel)
+        ? display.setRotation(2)   // 180 degree rotation for upside-down use
+        : display.setRotation(0);  // Default oled orientation.
 }
 
-void Arythmatik::InitInputs() {
-    clk.Init(CLK_PIN);
-    rst.Init(RST_PIN);
+void Arythmatik::InitInputs(Config config) {
+    if (config.RotatePanel) {
+        clk.Init(CLK_PIN_ROTATED);
+        rst.Init(RST_PIN_ROTATED);
+    } else {
+        clk.Init(CLK_PIN);
+        rst.Init(RST_PIN);
+    }
 }
 
-void Arythmatik::InitOutputs() {
+void Arythmatik::InitOutputs(Config config) {
     // Initialize each of the outputs with it's GPIO pins and probability.
     outputs[0].Init(OUT_CH1, LED_CH1);
     outputs[1].Init(OUT_CH2, LED_CH2);

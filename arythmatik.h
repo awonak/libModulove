@@ -9,6 +9,7 @@
 #include <EEPROM.h>
 #include <Wire.h>
 
+#include "arythmatik_config.h"
 #include "arythmatik_peripherials.h"
 #include "digital_input.h"
 #include "digital_output.h"
@@ -27,7 +28,7 @@ class Arythmatik {
     ~Arythmatik() {}
 
     /// @brief Initializes the Arduino, and A-RYTH-MATIK hardware.
-    void Init();
+    void Init(arythmatik::Config config);
 
     /// @brief Read the state of the CLK and RST inputs.
     void ProcessInputs();
@@ -39,9 +40,9 @@ class Arythmatik {
     DigitalInput rst;                                 ///< RST Digital Input object.
 
    private:
-    void InitDisplay();
-    void InitInputs();
-    void InitOutputs();
+    void InitDisplay(arythmatik::Config config);
+    void InitInputs(arythmatik::Config config);
+    void InitOutputs(arythmatik::Config config);
 };
 }  // namespace modulove
 
