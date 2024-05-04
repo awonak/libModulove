@@ -22,18 +22,6 @@ section of the Arduino Sketch Specification.
 git submodule add https://github.com/awonak/libmodulove.git <sketch>/src/libmodulove
 ```
 
-**Supported build flags.**
-
-`ENCODER_REVERSED` - Reverse the direction of the rotary encoder.
-
-`ROTATE_PANEL` - Rotate the orientation of the OLED by 180 degrees and swap the CLK and RST input jacks.
-
-Example usage:
-
-```shell
-arduino-cli compile -b arduino:avr:nano --build-property "build.extra_flags=-DROTATE_PANEL" <Sketch>
-```
-
 **Download the latest release.**
 
 [TODO]
