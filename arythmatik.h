@@ -27,7 +27,7 @@ class Arythmatik {
     ~Arythmatik() {}
 
     // Module configuration storage struct.
-    Config config;
+    arythmatik::Config config;
 
     /// @brief Initializes the Arduino, and A-RYTH-MATIK hardware.
     void Init();
