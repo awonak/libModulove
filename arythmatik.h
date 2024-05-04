@@ -21,14 +21,15 @@ namespace modulove {
 class Arythmatik {
    public:
     /// @brief Constructor
-    Arythmatik() : 
-      display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, -1) {}
+    Arythmatik() : display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, -1) {}
 
     /// @brief Deconstructor
     ~Arythmatik() {}
 
+    Config config;
+
     /// @brief Initializes the Arduino, and A-RYTH-MATIK hardware.
-    void Init(arythmatik::Config config);
+    void Init();
 
     /// @brief Read the state of the CLK and RST inputs.
     void ProcessInputs();
@@ -40,9 +41,9 @@ class Arythmatik {
     DigitalInput rst;                                 ///< RST Digital Input object.
 
    private:
-    void InitDisplay(arythmatik::Config config);
-    void InitInputs(arythmatik::Config config);
-    void InitOutputs(arythmatik::Config config);
+    void InitDisplay();
+    void InitInputs();
+    void InitOutputs();
 };
 }  // namespace modulove
 

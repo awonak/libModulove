@@ -52,6 +52,15 @@ Arythmatik hw;
 byte counter = 0;
 
 void setup() {
+    // Inside the setup, set config values prior to calling hw.Init().
+    #ifdef ROTATE_PANEL
+        hw.config.RotatePanel = true;
+    #endif
+
+    #ifdef REVERSE_ENCODER
+        hw.config.ReverseEncoder = true;
+    #endif
+
     // Initialize the A-RYTH-MATIK peripherials.
     hw.Init();
 }

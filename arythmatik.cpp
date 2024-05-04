@@ -14,16 +14,16 @@
 using namespace modulove;
 using namespace arythmatik;
 
-void Arythmatik::Init(Config config) {
-    InitInputs(config);
-    InitOutputs(config);
-    InitDisplay(config);
+void Arythmatik::Init() {
+    InitInputs();
+    InitOutputs();
+    InitDisplay();
 
     // CLOCK LED (DIGITAL)
     pinMode(CLOCK_LED, OUTPUT);
 }
 
-void Arythmatik::InitDisplay(Config config) {
+void Arythmatik::InitDisplay() {
     // OLED Display configuration.
     display.begin(SSD1306_SWITCHCAPVCC, OLED_ADDRESS);
     delay(1000);
@@ -36,7 +36,8 @@ void Arythmatik::InitDisplay(Config config) {
         : display.setRotation(0);  // Default oled orientation.
 }
 
-void Arythmatik::InitInputs(Config config) {
+void Arythmatik::InitInputs() {
+    // Set the cv input pins.
     if (config.RotatePanel) {
         clk.Init(CLK_PIN_ROTATED);
         rst.Init(RST_PIN_ROTATED);
@@ -44,9 +45,14 @@ void Arythmatik::InitInputs(Config config) {
         clk.Init(CLK_PIN);
         rst.Init(RST_PIN);
     }
+
+    // Set the encoder direction.
+    if (config.ReverseEncoder) {
+        encoder.setDirection(1);
+    }
 }
 
-void Arythmatik::InitOutputs(Config config) {
+void Arythmatik::InitOutputs() {
     // Initialize each of the outputs with it's GPIO pins and probability.
     outputs[0].Init(OUT_CH1, LED_CH1);
     outputs[1].Init(OUT_CH2, LED_CH2);
