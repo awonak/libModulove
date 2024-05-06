@@ -46,6 +46,20 @@ namespace arythmatik {
 #define LED_CH5 1
 #define LED_CH6 17
 
+// Output Pins for rotated panel.
+#define OUT_CH1_ROTATED 8
+#define OUT_CH2_ROTATED 9
+#define OUT_CH3_ROTATED 10
+#define OUT_CH4_ROTATED 1
+#define OUT_CH5_ROTATED 6
+#define OUT_CH6_ROTATED 7
+#define LED_CH1_ROTATED 0
+#define LED_CH2_ROTATED 1
+#define LED_CH3_ROTATED 17
+#define LED_CH4_ROTATED 14
+#define LED_CH5_ROTATED 15
+#define LED_CH6_ROTATED 16
+
 const uint8_t OUTPUT_COUNT = 6;
 
 }  // namespace arythmatik

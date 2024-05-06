@@ -54,12 +54,21 @@ void Arythmatik::InitInputs() {
 
 void Arythmatik::InitOutputs() {
     // Initialize each of the outputs with it's GPIO pins and probability.
-    outputs[0].Init(OUT_CH1, LED_CH1);
-    outputs[1].Init(OUT_CH2, LED_CH2);
-    outputs[2].Init(OUT_CH3, LED_CH3);
-    outputs[3].Init(OUT_CH4, LED_CH4);
-    outputs[4].Init(OUT_CH5, LED_CH5);
-    outputs[5].Init(OUT_CH6, LED_CH6);
+    if (config.RotatePanel) {
+        outputs[0].Init(OUT_CH1_ROTATED, LED_CH1_ROTATED);
+        outputs[1].Init(OUT_CH2_ROTATED, LED_CH2_ROTATED);
+        outputs[2].Init(OUT_CH3_ROTATED, LED_CH3_ROTATED);
+        outputs[3].Init(OUT_CH4_ROTATED, LED_CH4_ROTATED);
+        outputs[4].Init(OUT_CH5_ROTATED, LED_CH5_ROTATED);
+        outputs[5].Init(OUT_CH6_ROTATED, LED_CH6_ROTATED);
+    } else {
+        outputs[0].Init(OUT_CH1, LED_CH1);
+        outputs[1].Init(OUT_CH2, LED_CH2);
+        outputs[2].Init(OUT_CH3, LED_CH3);
+        outputs[3].Init(OUT_CH4, LED_CH4);
+        outputs[4].Init(OUT_CH5, LED_CH5);
+        outputs[5].Init(OUT_CH6, LED_CH6);
+    }
 }
 
 void Arythmatik::ProcessInputs() {
