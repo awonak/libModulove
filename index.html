@@ -89,6 +89,15 @@ Example usage</h1>
 <div class="line"><span class="keywordtype">byte</span> counter = 0;</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> setup() {</div>
+<div class="line">    <span class="comment">// Inside the setup, set config values prior to calling hw.Init().</span></div>
+<div class="line"><span class="preprocessor">    #ifdef ROTATE_PANEL</span></div>
+<div class="line">        hw.config.RotatePanel = <span class="keyword">true</span>;</div>
+<div class="line"><span class="preprocessor">    #endif</span></div>
+<div class="line"> </div>
+<div class="line"><span class="preprocessor">    #ifdef REVERSE_ENCODER</span></div>
+<div class="line">        hw.config.ReverseEncoder = <span class="keyword">true</span>;</div>
+<div class="line"><span class="preprocessor">    #endif</span></div>
+<div class="line"> </div>
 <div class="line">    <span class="comment">// Initialize the A-RYTH-MATIK peripherials.</span></div>
 <div class="line">    hw.Init();</div>
 <div class="line">}</div>

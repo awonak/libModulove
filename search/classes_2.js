@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['encoder_34',['Encoder',['../classmodulove_1_1Encoder.html',1,'modulove']]]
+  ['digitalinput_36',['DigitalInput',['../classmodulove_1_1DigitalInput.html',1,'modulove']]],
+  ['digitaloutput_37',['DigitalOutput',['../classmodulove_1_1DigitalOutput.html',1,'modulove']]]
 ];
