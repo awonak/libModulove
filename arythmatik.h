@@ -9,6 +9,7 @@
 #include <EEPROM.h>
 #include <Wire.h>
 
+#include "arythmatik_config.h"
 #include "arythmatik_peripherials.h"
 #include "digital_input.h"
 #include "digital_output.h"
@@ -20,11 +21,13 @@ namespace modulove {
 class Arythmatik {
    public:
     /// @brief Constructor
-    Arythmatik() : 
-      display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, -1) {}
+    Arythmatik() : display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, -1) {}
 
     /// @brief Deconstructor
     ~Arythmatik() {}
+
+    // Module configuration storage struct.
+    arythmatik::Config config;
 
     /// @brief Initializes the Arduino, and A-RYTH-MATIK hardware.
     void Init();

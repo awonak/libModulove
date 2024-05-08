@@ -39,19 +39,20 @@ class Encoder {
     Encoder() : encoder_(ENCODER_PIN1, ENCODER_PIN2, ENCODER_SW_PIN) {}
     ~Encoder() {}
 
+    /// @brief Set the encoder direction by passing 0 for cw increment or 1 for ccw increment.
+    void setDirection(byte direction) {
+        reversed_ = direction == 1;
+    }
+
     /// @brief Get the rotary direction if it has turned.
     /// @return Direction of turn or unchanged.
     Direction Rotate() {
-#ifdef ENCODER_REVERSED
-        // Reversed (counter clockwise)
-        return rotate_ccw();
-#else
-        // Default (clockwise)
-        return rotate_cw();
-#endif
+        return (reversed_)
+                   ? rotate_reversed()
+                   : rotate();
     }
 
-    Direction rotate_cw() {
+    Direction rotate() {
         switch (encoder_.rotate()) {
             case 1:
                 return DIRECTION_INCREMENT;
@@ -62,7 +63,7 @@ class Encoder {
         }
     }
 
-    Direction rotate_ccw() {
+    Direction rotate_reversed() {
         switch (encoder_.rotate()) {
             case 1:
                 return DIRECTION_DECREMENT;
@@ -98,6 +99,7 @@ class Encoder {
    private:
     SimpleRotary encoder_;
     static const int LONG_PRESS_DURATION_MS = 1000;
+    byte reversed_ = 0;
 
     byte _press() {
         // Check for long press to endable editing seed.
