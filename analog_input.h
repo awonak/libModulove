@@ -48,8 +48,8 @@ class AnalogInput {
 
    private:
     uint8_t pin_;
-    uint8_t read_;
-    uint8_t old_read_;
+    uint16_t read_;
+    uint16_t old_read_;
 };
 
 }  // namespace modulove
