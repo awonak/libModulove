@@ -41,6 +41,6 @@ void SyncLFO::ProcessInputs() {
     trig.Process();
 
     for (int i = 0; i < P_COUNT; i++) {
-        p[i].Process();
+        knobs[i].Process();
     }
 }

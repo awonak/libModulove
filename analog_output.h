@@ -15,7 +15,8 @@
 
 namespace modulove {
 
-const uint16_t MAX_CV = 1 << 10;  // Max 10 bit output resolution.
+const uint16_t MAX_INPUT = 1 << 10;  // Max 10 bit output resolution.
+const uint16_t MAX_OUTPUT = 1 << 8;  // Max 10 bit output resolution.
 
 class AnalogOutput {
    public:
@@ -35,11 +36,11 @@ class AnalogOutput {
      * @param cv Arduino analog value between 0 and 1023 (0..5v).
      */
     inline void Value(uint16_t cv) {
-        update((cv > MAX_CV) ? cv : MAX_CV);
+        update((cv > MAX_INPUT) ? cv : MAX_INPUT);
     }
 
     /// @brief Sets the cv output HIGH to about 5v.
-    inline void High() { update(MAX_CV); }
+    inline void High() { update(MAX_OUTPUT); }
 
     /// @brief Sets the cv output LOW to 0v.
     inline void Low() { update(0); }
@@ -56,8 +57,8 @@ class AnalogOutput {
     bool cv_;
 
     void update(uint16_t cv) {
+        cv_ = map(cv, 0, MAX_INPUT, 0, MAX_OUTPUT);
         analogWrite(pin_, cv);
-        cv_ = cv;
     }
 };
 

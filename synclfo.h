@@ -5,6 +5,7 @@
 
 // Oled setting
 #include "analog_input.h"
+#include "analog_output.h"
 #include "synclfo_peripherials.h"
 #include "digital_input.h"
 #include "digital_output.h"
@@ -30,11 +31,11 @@ class SyncLFO {
     AnalogInput p2;
     AnalogInput p3;
     AnalogInput p4;
-    AnalogInput p[P_COUNT] = {p1, p2, p3, p4};
+    AnalogInput knobs[synclfo::P_COUNT] = {p1, p2, p3, p4};
 
     DigitalInput gate;
     DigitalInput trig;
-    DigitalOutput output;
+    AnalogOutput output;
 
    private:
     void InitInputs();
