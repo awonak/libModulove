@@ -6,6 +6,8 @@
 // Oled setting
 #include "analog_input.h"
 #include "analog_output.h"
+#include "button.h"
+#include "synclfo_config.h"
 #include "synclfo_peripherials.h"
 #include "digital_input.h"
 #include "digital_output.h"
@@ -27,15 +29,23 @@ class SyncLFO {
     /// @brief Read the state of the CLK and RST inputs.
     void ProcessInputs();
 
+
+    // Module configuration storage struct.
+    synclfo::Config config;
+
     AnalogInput p1;
     AnalogInput p2;
     AnalogInput p3;
     AnalogInput p4;
-    AnalogInput knobs[synclfo::P_COUNT] = {p1, p2, p3, p4};
+    AnalogInput knobs[synclfo::P_COUNT];
 
     DigitalInput gate;
     DigitalInput trig;
     AnalogOutput output;
+
+    // Synchronizer hardware
+    Button b1;
+    Button b2;
 
    private:
     void InitInputs();
