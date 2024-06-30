@@ -37,7 +37,7 @@ class SyncLFO {
     AnalogInput p2;
     AnalogInput p3;
     AnalogInput p4;
-    AnalogInput knobs[synclfo::P_COUNT];
+    AnalogInput *knobs[synclfo::P_COUNT];
 
     DigitalInput gate;
     DigitalInput trig;

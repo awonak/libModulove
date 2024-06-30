@@ -23,9 +23,14 @@ void SyncLFO::InitInputs() {
     gate.Init(GATE_IN);
     trig.Init(GATE_IN);
 
-    for (int i = 0; i < P_COUNT; i++) {
-        knobs[i].Init(KNOB_PINS[i]);
-    }
+    p1.Init(P1);
+    p2.Init(P2);
+    p3.Init(P3);
+    p4.Init(P4);
+    knobs[0] = &p1;
+    knobs[1] = &p2;
+    knobs[2] = &p3;
+    knobs[3] = &p4;
 
     if (config.Synchronizer) {
         b1.Init(B1_PIN, LED1_PIN);
@@ -46,7 +51,7 @@ void SyncLFO::ProcessInputs() {
     trig.Process();
 
     for (int i = 0; i < P_COUNT; i++) {
-        knobs[i].Process();
+        knobs[i]->Process();
     }
 
     if (config.Synchronizer) {
