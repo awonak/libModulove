@@ -26,7 +26,7 @@ git submodule add https://github.com/awonak/libmodulove.git <sketch>/src/libmodu
 
 [TODO]
 
-## Example usage
+## Example usage for A-RYTH-MATIK
 
 ```cpp
 #include "src/libmodulove/arythmatik.h"
@@ -88,6 +88,52 @@ void loop() {
     hw.display.setCursor(SCREEN_HEIGHT/2, 0);
     hw.display.println("Counter: " + String(counter));
     hw.display.display();
+}
+```
+
+## Example usage for SyncLFO
+
+```cpp
+#include "src/libmodulove/arythmatik.h"
+
+using namespace modulove;
+using namespace synclfo;
+
+// Declare A-RYTH-MATIK hardware variable.
+SyncLFO hw;
+
+byte step = 0;
+
+void setup() {
+    // Inside the setup, set config values prior to calling hw.Init().
+    #ifdef SYNCHRONIZER
+        hw.config.Synchronizer = true;
+    #endif
+
+    // Initialize the SyncLFO peripherials.
+    hw.Init();
+}
+
+void loop() {
+    // Read cv inputs and process button state to determine state for this loop.
+    hw.ProcessInputs();
+
+    // Read cv inputs to determine state for this loop.
+    hw.ProcessInputs();
+
+    bool advance = hw.trig.State() == DigitalInput::STATE_RISING;
+    if (hw.config.Synchronizer) {
+        advance |= hw.b1.Change() == Button::CHANGE_PRESSED;
+    }
+
+    // Detect if new trigger received and advance step.
+    if (advance) {
+        step = (step + 1) % synclfo::P_COUNT;
+    }
+
+    // Write current step CV output.
+    byte val = map(hw.knobs[step]->Read(), 0, MAX_INPUT, 0, MAX_OUTPUT);
+    hw.output.Update(val);
 }
 ```
 
