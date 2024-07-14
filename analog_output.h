@@ -15,8 +15,8 @@
 
 namespace modulove {
 
-const uint16_t MAX_INPUT = 1 << 10;  // Max 10 bit output resolution.
-const uint16_t MAX_OUTPUT = 1 << 8;  // Max 8 bit output resolution.
+const int MAX_OUTPUT = (1 << 8) - 1;  // Max 8 bit output resolution.
+const int MAX_OUTPUT_10BIT = (1 << 10) - 1;  // Max 10 bit output resolution.
 
 class AnalogOutput {
    public:
@@ -44,12 +44,23 @@ class AnalogOutput {
     }
 
     /**
-     * @brief Set the output pin to the given cv value.
+     * @brief Set the output pin to the given 8 bit value.
      *
-     * @param val Arduino analog value between 0 and 1023 (0..5v).
+     * @param val Arduino analog value between 0 and 255 (0..5v).
      */
-    inline void Update(uint16_t val) {
-        update((val < MAX_INPUT) ? val : MAX_INPUT);
+    inline void Update(int val) {
+        update((val <= MAX_OUTPUT) ? val : MAX_OUTPUT);
+    }
+
+    /**
+     * @brief Set the output pin to the given 10 bit value.
+     *
+     * @param val Arduino analog value between 0 and 1024 (0..5v).
+     */
+    inline void Update10bit(int val) {
+        val = val <= MAX_OUTPUT_10BIT ? val : MAX_OUTPUT_10BIT;
+        val = map(val, 0, MAX_OUTPUT_10BIT, 0, MAX_OUTPUT);
+        update(val);
     }
 
     /// @brief Sets the cv output HIGH to about 5v.
@@ -71,7 +82,7 @@ class AnalogOutput {
     uint8_t cv_;
 
     void update(uint16_t val) {
-        cv_ = map(val, 0, MAX_INPUT, 0, MAX_OUTPUT);
+        cv_ = val;
         analogWrite(cv_pin_, cv_);
         #ifdef LED_PIN_DEFINED
         analogWrite(led_pin_, cv_);

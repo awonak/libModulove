@@ -15,6 +15,8 @@
 
 namespace modulove {
 
+const int MAX_INPUT = (1 << 10) - 1;  // Max 10 bit analog read resolution.
+
 class AnalogInput {
    public:
     AnalogInput() {}
