@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['inputstate_66',['InputState',['../classmodulove_1_1DigitalInput.html#a3c904534df4246a1dc01d8bd8a3b4b7e',1,'modulove::DigitalInput']]]
+  ['direction_98',['Direction',['../classmodulove_1_1Encoder.html#a9a942b288a864d774fc206347b3bfaf3',1,'modulove::Encoder']]]
 ];

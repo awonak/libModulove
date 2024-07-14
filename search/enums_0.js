@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['direction_65',['Direction',['../classmodulove_1_1Encoder.html#a9a942b288a864d774fc206347b3bfaf3',1,'modulove::Encoder']]]
+  ['buttonchange_97',['ButtonChange',['../classmodulove_1_1Button.html#a895394602c008e931c76917a108446d4',1,'modulove::Button']]]
 ];

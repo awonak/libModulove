@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['high_46',['High',['../classmodulove_1_1DigitalOutput.html#a1510005e503d8b3293357ef4208273a1',1,'modulove::DigitalOutput']]]
+  ['change_72',['Change',['../classmodulove_1_1Button.html#a164691ad761fd51410e6b70a36a76a36',1,'modulove::Button']]]
 ];

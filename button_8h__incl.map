@@ -1,0 +1,4 @@
+<map id="button.h" name="button.h">
+<area shape="rect" id="node1" title="Class for interacting with trigger / gate inputs." alt="" coords="9,5,85,32"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,80,89,107"/>
+</map>

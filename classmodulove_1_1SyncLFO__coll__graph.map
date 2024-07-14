@@ -1,0 +1,8 @@
+<map id="modulove::SyncLFO" name="modulove::SyncLFO">
+<area shape="rect" id="node1" title="Hardware abstraction wrapper for SyncLFO module." alt="" coords="284,139,435,165"/>
+<area shape="rect" id="node2" href="$classmodulove_1_1AnalogInput.html" title=" " alt="" coords="11,27,184,53"/>
+<area shape="rect" id="node3" href="$structmodulove_1_1synclfo_1_1Config.html" title=" " alt="" coords="22,78,173,119"/>
+<area shape="rect" id="node4" href="$classmodulove_1_1AnalogOutput.html" title=" " alt="" coords="5,144,189,171"/>
+<area shape="rect" id="node5" href="$classmodulove_1_1Button.html" title=" " alt="" coords="28,199,167,225"/>
+<area shape="rect" id="node6" href="$classmodulove_1_1DigitalInput.html" title=" " alt="" coords="12,259,183,285"/>
+</map>

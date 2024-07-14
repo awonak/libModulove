@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['pressed_51',['Pressed',['../classmodulove_1_1Encoder.html#a7d92d0c20e92aed5a0f868db2f332014',1,'modulove::Encoder']]],
-  ['process_52',['Process',['../classmodulove_1_1DigitalInput.html#ad63b406c4d2f9843239656514521bb76',1,'modulove::DigitalInput']]],
-  ['processinputs_53',['ProcessInputs',['../classmodulove_1_1Arythmatik.html#ac00ab3e7dee469ffce99981e36832720',1,'modulove::Arythmatik']]]
+  ['longpressed_76',['LongPressed',['../classmodulove_1_1Encoder.html#aef3201d3e4ca9fced5216040d80515f0',1,'modulove::Encoder']]],
+  ['low_77',['Low',['../classmodulove_1_1AnalogOutput.html#aa1d2d5d41043a0cc68ee9536d89b9683',1,'modulove::AnalogOutput::Low()'],['../classmodulove_1_1DigitalOutput.html#af82726ffc6e19e794d031d93e2d92379',1,'modulove::DigitalOutput::Low()']]]
 ];

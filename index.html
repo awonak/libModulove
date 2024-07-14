@@ -77,7 +77,7 @@ Installation instructions</h1>
 </div><!-- fragment --><p><b>Download the latest release.</b></p>
 <p>[TODO]</p>
 <h1><a class="anchor" id="autotoc_md2"></a>
-Example usage</h1>
+Example usage for A-RYTH-MATIK</h1>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;src/libmodulove/arythmatik.h&quot;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span>modulove;</div>
@@ -140,7 +140,50 @@ Example usage</h1>
 <div class="line">}</div>
 <div class="ttc" id="aclassmodulove_1_1Encoder_html_a880b26a3fefd56b81f393ad8835878da"><div class="ttname"><a href="classmodulove_1_1Encoder.html#a880b26a3fefd56b81f393ad8835878da">modulove::Encoder::PressType</a></div><div class="ttdeci">PressType</div><div class="ttdoc">Enum for type of switch press.</div><div class="ttdef"><b>Definition:</b> encoder.h:33</div></div>
 <div class="ttc" id="aclassmodulove_1_1Encoder_html_a9a942b288a864d774fc206347b3bfaf3"><div class="ttname"><a href="classmodulove_1_1Encoder.html#a9a942b288a864d774fc206347b3bfaf3">modulove::Encoder::Direction</a></div><div class="ttdeci">Direction</div><div class="ttdoc">Enum constants for encoder rotation increment/decrement state.</div><div class="ttdef"><b>Definition:</b> encoder.h:26</div></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md3"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md3"></a>
+Example usage for SyncLFO</h1>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;src/libmodulove/arythmatik.h&quot;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">using namespace </span>modulove;</div>
+<div class="line"><span class="keyword">using namespace </span>synclfo;</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Declare A-RYTH-MATIK hardware variable.</span></div>
+<div class="line">SyncLFO hw;</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">byte</span> step = 0;</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> setup() {</div>
+<div class="line">    <span class="comment">// Inside the setup, set config values prior to calling hw.Init().</span></div>
+<div class="line"><span class="preprocessor">    #ifdef SYNCHRONIZER</span></div>
+<div class="line">        hw.config.Synchronizer = <span class="keyword">true</span>;</div>
+<div class="line"><span class="preprocessor">    #endif</span></div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// Initialize the SyncLFO peripherials.</span></div>
+<div class="line">    hw.Init();</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> loop() {</div>
+<div class="line">    <span class="comment">// Read cv inputs and process button state to determine state for this loop.</span></div>
+<div class="line">    hw.ProcessInputs();</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// Read cv inputs to determine state for this loop.</span></div>
+<div class="line">    hw.ProcessInputs();</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordtype">bool</span> advance = hw.trig.State() == DigitalInput::STATE_RISING;</div>
+<div class="line">    <span class="keywordflow">if</span> (hw.config.Synchronizer) {</div>
+<div class="line">        advance |= hw.b1.Change() == Button::CHANGE_PRESSED;</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// Detect if new trigger received and advance step.</span></div>
+<div class="line">    <span class="keywordflow">if</span> (advance) {</div>
+<div class="line">        step = (step + 1) % synclfo::P_COUNT;</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// Write current step CV output.</span></div>
+<div class="line">    <span class="keywordtype">byte</span> val = map(hw.knobs[step]-&gt;Read(), 0, MAX_INPUT, 0, MAX_OUTPUT);</div>
+<div class="line">    hw.output.Update(val);</div>
+<div class="line">}</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md4"></a>
 Third-party Arduino Libraries</h2>
 <ul>
 <li><a href="https://github.com/adafruit/Adafruit-GFX-Library">Adafruit-GFX-Library</a></li>

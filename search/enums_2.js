@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['presstype_67',['PressType',['../classmodulove_1_1Encoder.html#a880b26a3fefd56b81f393ad8835878da',1,'modulove::Encoder']]]
+  ['inputstate_99',['InputState',['../classmodulove_1_1DigitalInput.html#a3c904534df4246a1dc01d8bd8a3b4b7e',1,'modulove::DigitalInput']]]
 ];

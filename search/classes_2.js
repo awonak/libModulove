@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['digitalinput_36',['DigitalInput',['../classmodulove_1_1DigitalInput.html',1,'modulove']]],
-  ['digitaloutput_37',['DigitalOutput',['../classmodulove_1_1DigitalOutput.html',1,'modulove']]]
+  ['config_54',['Config',['../structmodulove_1_1arythmatik_1_1Config.html',1,'modulove::arythmatik::Config'],['../structmodulove_1_1synclfo_1_1Config.html',1,'modulove::synclfo::Config']]]
 ];

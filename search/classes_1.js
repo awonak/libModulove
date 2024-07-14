@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['config_35',['Config',['../structmodulove_1_1arythmatik_1_1Config.html',1,'modulove::arythmatik']]]
+  ['button_53',['Button',['../classmodulove_1_1Button.html',1,'modulove']]]
 ];
