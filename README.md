@@ -6,11 +6,23 @@ Full Doxyen generated documentation of the library can be found here: [https://a
 
 ## Installation instructions
 
-There are two ways to install. Include the library directly in your script
-repo as a **git submodule**, or **download** the latest release zip and extract the
-library into your `~/Arduino/libraries` folder.
+**Option 1: Arduino CLI**
 
-**Include the library as a git submodule to use in your scripts.**
+The recommended way to install the library is to use the Arduino CLI to download the library code directly from GitHub.
+
+```
+$ arduino-cli config init
+$ arduino-cli config set library.enable_unsafe_install true
+$ arduino-cli lib install --git-url https://github.com/awonak/libModulove.git 
+```
+
+**Option 2: Clone and symlink the repo**
+```
+$ git clone https://github.com/awonak/libModulove.git
+$ ln -s `pwd`/libmodulove ~/Arduino/libraries  
+```
+
+**Option 3: Include the library as a git submodule to use in your scripts.**
 
 In order to include the library source code directly in your repo as a git
 submodule, you must follow the Arduino Sketch specifications and place the
@@ -21,10 +33,6 @@ section of the Arduino Sketch Specification.
 ```bash
 git submodule add https://github.com/awonak/libmodulove.git <sketch>/src/libmodulove
 ```
-
-**Download the latest release.**
-
-[TODO]
 
 ## Example usage for A-RYTH-MATIK
 
