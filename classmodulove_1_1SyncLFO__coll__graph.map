@@ -1,8 +1,13 @@
 <map id="modulove::SyncLFO" name="modulove::SyncLFO">
-<area shape="rect" id="node1" title="Hardware abstraction wrapper for SyncLFO module." alt="" coords="284,139,435,165"/>
-<area shape="rect" id="node2" href="$classmodulove_1_1AnalogInput.html" title=" " alt="" coords="11,27,184,53"/>
-<area shape="rect" id="node3" href="$structmodulove_1_1synclfo_1_1Config.html" title=" " alt="" coords="22,78,173,119"/>
-<area shape="rect" id="node4" href="$classmodulove_1_1AnalogOutput.html" title=" " alt="" coords="5,144,189,171"/>
-<area shape="rect" id="node5" href="$classmodulove_1_1Button.html" title=" " alt="" coords="28,199,167,225"/>
-<area shape="rect" id="node6" href="$classmodulove_1_1DigitalInput.html" title=" " alt="" coords="12,259,183,285"/>
+<area shape="rect" id="Node000001" title="Hardware abstraction wrapper for SyncLFO module." alt="" coords="284,177,435,202"/>
+<area shape="rect" id="Node000002" href="$structmodulove_1_1synclfo_1_1Config.html" title=" " alt="" coords="22,5,173,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="187,37,225,50,261,68,292,94,319,123,353,175,349,178,314,127,289,98,259,73,223,55,185,42"/>
+<area shape="rect" id="Node000003" href="$classmodulove_1_1AnalogInput.html" title=" " alt="" coords="11,117,184,142"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="194,142,261,156,322,174,320,179,259,161,193,147"/>
+<area shape="rect" id="Node000004" href="$classmodulove_1_1DigitalInput.html" title=" " alt="" coords="12,175,183,201"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="196,186,284,186,284,192,196,191"/>
+<area shape="rect" id="Node000005" href="$classmodulove_1_1AnalogOutput.html" title=" " alt="" coords="5,225,189,250"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="188,220,260,207,296,199,297,205,260,212,189,225"/>
+<area shape="rect" id="Node000006" href="$classmodulove_1_1Button.html" title=" " alt="" coords="28,283,167,309"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="178,278,219,266,259,251,304,226,340,200,343,204,307,230,261,256,221,271,180,283"/>
 </map>

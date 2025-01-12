@@ -1,12 +1,26 @@
 <map id="synclfo.cpp" name="synclfo.cpp">
-<area shape="rect" id="node1" title="Library for building custom scripts for the Modulove SyncLFO." alt="" coords="377,5,473,32"/>
-<area shape="rect" id="node2" href="$synclfo_8h_source.html" title=" " alt="" coords="384,80,466,107"/>
-<area shape="rect" id="node3" title=" " alt="" coords="258,229,342,256"/>
-<area shape="rect" id="node4" href="$analog__input_8h.html" title="Class for interacting with analog inputs." alt="" coords="31,155,150,181"/>
-<area shape="rect" id="node5" href="$analog__output_8h.html" title="Class for interacting with analog control voltage outputs." alt="" coords="174,155,300,181"/>
-<area shape="rect" id="node6" href="$button_8h.html" title="Class for interacting with trigger / gate inputs." alt="" coords="324,155,400,181"/>
-<area shape="rect" id="node7" href="$synclfo__config_8h.html" title="collection of configuration settings for the SyncLFO." alt="" coords="424,155,551,181"/>
-<area shape="rect" id="node8" href="$synclfo__peripherials_8h.html" title="Arduino pin definitions for the Modulove SyncLFO module." alt="" coords="576,155,741,181"/>
-<area shape="rect" id="node9" href="$digital__input_8h.html" title="Class for interacting with trigger / gate inputs." alt="" coords="765,155,880,181"/>
-<area shape="rect" id="node10" href="$digital__output_8h.html" title="Class for interacting with trigger / gate outputs." alt="" coords="904,155,1028,181"/>
+<area shape="rect" id="Node000001" title="Library for building custom scripts for the Modulove SyncLFO." alt="" coords="377,5,473,31"/>
+<area shape="rect" id="Node000002" href="$synclfo_8h_source.html" title=" " alt="" coords="384,79,466,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="428,31,428,65,422,65,422,31"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="258,225,342,251"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="384,95,295,96,184,104,131,112,83,122,45,136,20,154,12,166,8,177,9,186,15,195,37,209,70,220,158,231,244,235,243,240,157,237,69,225,34,214,11,198,4,188,3,177,7,164,17,150,43,131,82,117,130,106,184,99,294,91,384,90"/>
+<area shape="rect" id="Node000004" href="$analog__input_8h.html" title="Class for interacting with analog inputs." alt="" coords="31,152,150,177"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="385,104,158,152,157,147,384,99"/>
+<area shape="rect" id="Node000005" href="$analog__output_8h.html" title="Class for interacting with analog control voltage outputs." alt="" coords="174,152,300,177"/>
+<area shape="poly" id="edge5_Node000002_Node000005" title=" " alt="" coords="396,107,282,149,280,144,394,102"/>
+<area shape="rect" id="Node000006" href="$button_8h.html" title="Class for interacting with trigger / gate inputs." alt="" coords="324,152,400,177"/>
+<area shape="poly" id="edge7_Node000002_Node000006" title=" " alt="" coords="417,106,384,143,380,140,413,103"/>
+<area shape="rect" id="Node000007" href="$synclfo__config_8h.html" title="collection of configuration settings for the SyncLFO." alt="" coords="424,152,551,177"/>
+<area shape="poly" id="edge9_Node000002_Node000007" title=" " alt="" coords="437,103,470,140,466,143,433,106"/>
+<area shape="rect" id="Node000008" href="$synclfo__peripherials_8h.html" title="Arduino pin definitions for the Modulove SyncLFO module." alt="" coords="576,152,741,177"/>
+<area shape="poly" id="edge10_Node000002_Node000008" title=" " alt="" coords="463,101,609,145,607,151,462,107"/>
+<area shape="rect" id="Node000009" href="$digital__input_8h.html" title="Class for interacting with trigger / gate inputs." alt="" coords="765,152,880,177"/>
+<area shape="poly" id="edge11_Node000002_Node000009" title=" " alt="" coords="467,97,752,148,751,153,466,103"/>
+<area shape="rect" id="Node000010" href="$digital__output_8h.html" title="Class for interacting with trigger / gate outputs." alt="" coords="904,152,1028,177"/>
+<area shape="poly" id="edge13_Node000002_Node000010" title=" " alt="" coords="467,95,891,149,890,155,466,100"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="125,175,254,218,252,223,123,180"/>
+<area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="249,176,282,213,278,217,245,179"/>
+<area shape="poly" id="edge8_Node000006_Node000003" title=" " alt="" coords="354,179,321,217,317,213,350,176"/>
+<area shape="poly" id="edge12_Node000009_Node000003" title=" " alt="" coords="765,178,754,180,356,233,356,227,753,175,765,173"/>
+<area shape="poly" id="edge14_Node000010_Node000003" title=" " alt="" coords="905,178,892,180,589,213,355,235,355,229,589,208,891,175,904,173"/>
 </map>

@@ -1,5 +1,7 @@
 <map id="analog_input.h" name="analog_input.h">
-<area shape="rect" id="node1" title="Class for interacting with analog inputs." alt="" coords="5,5,124,32"/>
-<area shape="rect" id="node2" href="$synclfo_8h_source.html" title=" " alt="" coords="24,80,105,107"/>
-<area shape="rect" id="node3" href="$synclfo_8cpp.html" title="Library for building custom scripts for the Modulove SyncLFO." alt="" coords="17,155,113,181"/>
+<area shape="rect" id="Node000001" title="Class for interacting with analog inputs." alt="" coords="5,5,124,31"/>
+<area shape="rect" id="Node000002" href="$synclfo_8h_source.html" title=" " alt="" coords="24,79,105,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="67,44,67,79,62,79,62,44"/>
+<area shape="rect" id="Node000003" href="$synclfo_8cpp.html" title="Library for building custom scripts for the Modulove SyncLFO." alt="" coords="17,152,113,177"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="67,118,67,152,62,152,62,118"/>
 </map>

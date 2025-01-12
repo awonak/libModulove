@@ -1,7 +1,11 @@
 <map id="modulove::Arythmatik" name="modulove::Arythmatik">
-<area shape="rect" id="node1" title="Hardware abstraction wrapper for A&#45;RYTH&#45;MATIK module." alt="" coords="293,81,461,108"/>
-<area shape="rect" id="node2" href="$classmodulove_1_1DigitalInput.html" title=" " alt="" coords="11,5,182,32"/>
-<area shape="rect" id="node3" href="$classmodulove_1_1DigitalOutput.html" title=" " alt="" coords="5,56,188,83"/>
-<area shape="rect" id="node4" href="$classmodulove_1_1Encoder.html" title=" " alt="" coords="23,107,170,133"/>
-<area shape="rect" id="node5" href="$structmodulove_1_1arythmatik_1_1Config.html" title=" " alt="" coords="13,158,180,199"/>
+<area shape="rect" id="Node000001" title="Hardware abstraction wrapper for A&#45;RYTH&#45;MATIK module." alt="" coords="293,94,461,119"/>
+<area shape="rect" id="Node000002" href="$structmodulove_1_1arythmatik_1_1Config.html" title=" " alt="" coords="13,5,180,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="185,46,270,71,337,91,335,96,269,76,184,52"/>
+<area shape="rect" id="Node000003" href="$classmodulove_1_1Encoder.html" title=" " alt="" coords="23,70,170,95"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="184,87,293,97,293,102,184,93"/>
+<area shape="rect" id="Node000004" href="$classmodulove_1_1DigitalOutput.html" title=" " alt="" coords="5,119,188,145"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="202,121,269,115,293,112,294,118,270,120,202,126"/>
+<area shape="rect" id="Node000005" href="$classmodulove_1_1DigitalInput.html" title=" " alt="" coords="11,177,182,202"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="195,173,269,155,314,137,352,117,355,122,316,141,270,160,196,178"/>
 </map>

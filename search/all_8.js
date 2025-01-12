@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['longpressed_27',['LongPressed',['../classmodulove_1_1Encoder.html#aef3201d3e4ca9fced5216040d80515f0',1,'modulove::Encoder']]],
-  ['low_28',['Low',['../classmodulove_1_1AnalogOutput.html#aa1d2d5d41043a0cc68ee9536d89b9683',1,'modulove::AnalogOutput::Low()'],['../classmodulove_1_1DigitalOutput.html#af82726ffc6e19e794d031d93e2d92379',1,'modulove::DigitalOutput::Low()']]]
+  ['init_0',['init',['../classmodulove_1_1AnalogInput.html#ab8f79aaf5d1b0498e60b7841ab53f045',1,'modulove::AnalogInput::Init()'],['../classmodulove_1_1AnalogOutput.html#a1e5606c6bb869b4614c7edd56c98a76b',1,'modulove::AnalogOutput::Init(uint8_t pin)'],['../classmodulove_1_1AnalogOutput.html#a8c80e8ae3f8e5782545ce1d3438a52e6',1,'modulove::AnalogOutput::Init(uint8_t cv_pin, uint8_t led_pin)'],['../classmodulove_1_1Arythmatik.html#a7670f44e9d86ba5b46afcf854df92af4',1,'modulove::Arythmatik::Init()'],['../classmodulove_1_1Button.html#a1c24a3c5fc4aba16e5bffbd6f8027b15',1,'modulove::Button::Init(uint8_t pin)'],['../classmodulove_1_1Button.html#a8936343dfe23246188618313720fab9b',1,'modulove::Button::Init(uint8_t pin, uint8_t led_pin)'],['../classmodulove_1_1DigitalInput.html#a24eb8c9931ebf5f817b4954775fbdb74',1,'modulove::DigitalInput::Init()'],['../classmodulove_1_1DigitalOutput.html#abab168e7bc80c3296341de325bd22b93',1,'modulove::DigitalOutput::Init(uint8_t cv_pin)'],['../classmodulove_1_1DigitalOutput.html#a9652d82aa7fa60a0a7c4443ddfd0895c',1,'modulove::DigitalOutput::Init(uint8_t cv_pin, uint8_t led_pin)'],['../classmodulove_1_1SyncLFO.html#a22fa9b1810d48f16718ec91039c76c9f',1,'modulove::SyncLFO::Init()']]],
+  ['inputstate_1',['InputState',['../classmodulove_1_1DigitalInput.html#a3c904534df4246a1dc01d8bd8a3b4b7e',1,'modulove::DigitalInput']]],
+  ['installation_20instructions_2',['Installation instructions',['../index.html#autotoc_md1',1,'']]],
+  ['instructions_3',['Installation instructions',['../index.html#autotoc_md1',1,'']]]
 ];

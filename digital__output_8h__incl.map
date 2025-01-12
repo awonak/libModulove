@@ -1,4 +1,5 @@
 <map id="digital_output.h" name="digital_output.h">
-<area shape="rect" id="node1" title="Class for interacting with trigger / gate outputs." alt="" coords="5,5,129,32"/>
-<area shape="rect" id="node2" title=" " alt="" coords="25,80,109,107"/>
+<area shape="rect" id="Node000001" title="Class for interacting with trigger / gate outputs." alt="" coords="5,5,129,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="25,79,109,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="70,31,70,65,65,65,65,31"/>
 </map>
