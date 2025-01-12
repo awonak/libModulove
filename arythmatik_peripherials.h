@@ -25,11 +25,11 @@ namespace arythmatik {
 #define ENCODER_SW_PIN 12
 
 // Default panel orientation.
-#define CLK_PIN 11
-#define RST_PIN 13
+#define CLK_PIN 13
+#define RST_PIN 11
 // Rotated panel.
-#define CLK_PIN_ROTATED 13
-#define RST_PIN_ROTATED 11
+#define CLK_PIN_ROTATED 11
+#define RST_PIN_ROTATED 13
 
 // Output Pins
 #define CLOCK_LED 4
