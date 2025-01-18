@@ -4,6 +4,5 @@ var searchData=
   ['digital_5foutput_2eh_1',['digital_output.h',['../digital__output_8h.html',1,'']]],
   ['digitalinput_2',['DigitalInput',['../classmodulove_1_1DigitalInput.html',1,'modulove']]],
   ['digitaloutput_3',['DigitalOutput',['../classmodulove_1_1DigitalOutput.html',1,'modulove']]],
-  ['direction_4',['Direction',['../classmodulove_1_1Encoder.html#a9a942b288a864d774fc206347b3bfaf3',1,'modulove::Encoder']]],
-  ['display_5',['display',['../classmodulove_1_1Arythmatik.html#ad62526b8ec66fa3f68d97c94d4eaa3a7',1,'modulove::Arythmatik']]]
+  ['display_4',['display',['../classmodulove_1_1Arythmatik.html#ad62526b8ec66fa3f68d97c94d4eaa3a7',1,'modulove::Arythmatik']]]
 ];

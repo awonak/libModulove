@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['encoder_0',['Encoder',['../classmodulove_1_1Encoder.html',1,'modulove']]]
+  ['synclfo_0',['SyncLFO',['../classmodulove_1_1SyncLFO.html',1,'modulove']]]
 ];

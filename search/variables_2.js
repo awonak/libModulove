@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['encoder_0',['encoder',['../classmodulove_1_1Arythmatik.html#ab143d3bfca7769fc6eb6287c9a9b02ab',1,'modulove::Arythmatik']]]
+  ['eb_0',['eb',['../classmodulove_1_1Arythmatik.html#a4c562a4c0d87aeec8b985b8ec3ce1bc0',1,'modulove::Arythmatik']]]
 ];
