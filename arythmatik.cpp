@@ -45,11 +45,6 @@ void Arythmatik::InitInputs() {
         clk.Init(CLK_PIN);
         rst.Init(RST_PIN);
     }
-
-    // Set the encoder direction.
-    if (config.ReverseEncoder) {
-        encoder.setDirection(1);
-    }
 }
 
 void Arythmatik::InitOutputs() {
@@ -74,6 +69,7 @@ void Arythmatik::InitOutputs() {
 void Arythmatik::ProcessInputs() {
     clk.Process();
     rst.Process();
+    eb.update();
 
     // Clock In LED indicator mirrors the clock input.
     if (clk.State() == DigitalInput::STATE_RISING) {

@@ -53,9 +53,9 @@ void setup() {
         hw.config.RotatePanel = true;
     #endif
 
-    #ifdef REVERSE_ENCODER
-        hw.config.ReverseEncoder = true;
-    #endif
+    // Set up encoder parameters
+    hw.eb.setEncoderHandler(UpdateRotate);
+    hw.eb.setClickHandler(UpdatePress);
 
     // Initialize the A-RYTH-MATIK peripherials.
     hw.Init();
@@ -70,20 +70,6 @@ void loop() {
         counter = ++counter % OUTPUT_COUNT;
     }
 
-    // Read encoder for a change in direction and update the counter.
-    Encoder::Direction dir = hw.encoder.rotate();
-    if (dir == Encoder::DIRECTION_INCREMENT) {
-        counter = min(++counter, OUTPUT_COUNT);
-    } else if (dir == Encoder::DIRECTION_DECREMENT) {
-        counter = max(--counter, 0);
-    }
-
-    // Reset the counter back to 0 when encoder switch pressed.
-    Encoder::PressType press = hw.encoder.Pressed();
-    if (press == Encoder::PRESS_SHORT) {
-        counter = 0;
-    }
-
     // Activate the current counter output.
     for (int i = 0; i < OUTPUT_COUNT; i++) {
         (i == counter)
@@ -96,6 +82,18 @@ void loop() {
     hw.display.setCursor(SCREEN_HEIGHT/2, 0);
     hw.display.println("Counter: " + String(counter));
     hw.display.display();
+}
+
+void UpdateRotate(EncoderButton &eb) {
+    // Read encoder for a change in direction and update the counter.
+    counter = (eb.increment() > 0) 
+        ? min(counter++, OUTPUT_COUNT)
+        : max(counter--, 0);
+}
+
+void UpdatePress(EncoderButton &eb) {
+    // Reset the counter to zero.
+    counter = 0;
 }
 ```
 
@@ -149,4 +147,4 @@ void loop() {
 
 * [Adafruit-GFX-Library](https://github.com/adafruit/Adafruit-GFX-Library)
 * [Adafruit_SSD1306](https://github.com/adafruit/Adafruit_SSD1306)
-* [Simple Rotary](https://github.com/mprograms/SimpleRotary/tree/master)
+* [EncoderButton](https://github.com/Stutchbury/EncoderButton)
