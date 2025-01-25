@@ -52,6 +52,9 @@ void setup() {
     #ifdef ROTATE_PANEL
         hw.config.RotatePanel = true;
     #endif
+    #ifdef ENCODER_REVERSED
+        hw.config.ReverseEncoder = true;
+    #endif
 
     // Set up encoder parameters
     hw.eb.setEncoderHandler(UpdateRotate);
@@ -85,10 +88,14 @@ void loop() {
 }
 
 void UpdateRotate(EncoderButton &eb) {
-    // Read encoder for a change in direction and update the counter.
-    counter = (eb.increment() > 0) 
-        ? min(counter++, OUTPUT_COUNT)
-        : max(counter--, 0);
+    // Read the configured encoder direction (according to hw.config.ReverseEncoder setting).
+    Direction dir = hw.EncoderDirection();
+    // Read the number of rotation clicks since the last encoder handler event.
+    int rotate_count = eb.increment();
+
+    counter = (dir == DIRECTION_INCREMENT) 
+        ? min(counter + rotate_count, OUTPUT_COUNT)
+        : max(counter - rotate_count, 0);
 }
 
 void UpdatePress(EncoderButton &eb) {

@@ -14,6 +14,7 @@
 #include "arythmatik_peripherials.h"
 #include "digital_input.h"
 #include "digital_output.h"
+#include "encoder_dir.h"
 
 namespace modulove {
 
@@ -36,6 +37,9 @@ class Arythmatik {
 
     /// @brief Read the state of the CLK and RST inputs.
     void ProcessInputs();
+
+    /// @brief Read encoder rotate direction state.
+    arythmatik::Direction EncoderDirection();
 
     Adafruit_SSD1306 display;                         ///< OLED display object.
     EncoderButton eb;                                 ///< EncoderButton object.
