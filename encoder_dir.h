@@ -47,9 +47,7 @@ inline Direction rotate_reversed_(int dir) {
 /// @return Direction of turn or unchanged.
 inline Direction Rotate(int dir, bool reversed) {
     int _dir = dir > 0 ? 1 : -1;
-    return (reversed)
-                ? rotate_reversed_(_dir)
-                : rotate_(_dir);
+    return (reversed) ? rotate_reversed_(_dir) : rotate_(_dir);
 }
 
 }  // namespace arythmatik
