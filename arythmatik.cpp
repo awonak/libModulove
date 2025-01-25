@@ -78,3 +78,7 @@ void Arythmatik::ProcessInputs() {
         digitalWrite(CLOCK_LED, LOW);
     }
 }
+
+Direction Arythmatik::EncoderDirection() {
+    return Rotate(eb.increment(), config.ReverseEncoder);
+}
