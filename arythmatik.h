@@ -38,7 +38,8 @@ class Arythmatik {
     /// @brief Read the state of the CLK and RST inputs.
     void ProcessInputs();
 
-    /// @brief Read encoder rotate direction state.
+    /// @brief Parse the configured EncoderButton increment direction.
+    /// @return Direction of turn or unchanged.
     arythmatik::Direction EncoderDirection();
 
     Adafruit_SSD1306 display;                         ///< OLED display object.
