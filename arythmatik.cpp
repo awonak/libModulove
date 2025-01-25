@@ -79,6 +79,8 @@ void Arythmatik::ProcessInputs() {
     }
 }
 
+/// @brief Parse the configured EncoderButton increment direction.
+/// @return Direction of turn or unchanged.
 Direction Arythmatik::EncoderDirection() {
     return Rotate(eb.increment(), config.ReverseEncoder);
 }
