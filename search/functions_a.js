@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['update_0',['update',['../classmodulove_1_1AnalogOutput.html#ac4af24091469121bcb3e86150bc00df9',1,'modulove::AnalogOutput::Update()'],['../classmodulove_1_1DigitalOutput.html#ab31dfb2ad9c0e9db3aee02f319f6a14d',1,'modulove::DigitalOutput::Update()']]],
-  ['update10bit_1',['Update10bit',['../classmodulove_1_1AnalogOutput.html#a58a182b6ab2f1b2ff9e5182200dcf251',1,'modulove::AnalogOutput']]]
+  ['state_0',['State',['../classmodulove_1_1DigitalInput.html#a165056e2f2e2201ae2dc21960425f28b',1,'modulove::DigitalInput']]],
+  ['synclfo_1',['SyncLFO',['../classmodulove_1_1SyncLFO.html#aba3ce54d3982850fefba897f7171f4ff',1,'modulove::SyncLFO']]]
 ];

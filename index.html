@@ -104,6 +104,9 @@ Example usage for A-RYTH-MATIK</h1>
 <div class="line"><span class="preprocessor">    #ifdef ROTATE_PANEL</span></div>
 <div class="line">        hw.config.RotatePanel = <span class="keyword">true</span>;</div>
 <div class="line"><span class="preprocessor">    #endif</span></div>
+<div class="line"><span class="preprocessor">    #ifdef ENCODER_REVERSED</span></div>
+<div class="line">        hw.config.ReverseEncoder = <span class="keyword">true</span>;</div>
+<div class="line"><span class="preprocessor">    #endif</span></div>
 <div class="line"> </div>
 <div class="line">    <span class="comment">// Set up encoder parameters</span></div>
 <div class="line">    hw.<a class="code hl_variable" href="classmodulove_1_1Arythmatik.html#a4c562a4c0d87aeec8b985b8ec3ce1bc0">eb</a>.setEncoderHandler(UpdateRotate);</div>
@@ -137,26 +140,32 @@ Example usage for A-RYTH-MATIK</h1>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> UpdateRotate(EncoderButton &amp;eb) {</div>
-<div class="line">    <span class="comment">// Read encoder for a change in direction and update the counter.</span></div>
-<div class="line">    counter = (eb.increment() &gt; 0) </div>
-<div class="line">        ? min(counter++, OUTPUT_COUNT)</div>
-<div class="line">        : max(counter--, 0);</div>
+<div class="line">    <span class="comment">// Read the configured encoder direction (according to hw.config.ReverseEncoder setting).</span></div>
+<div class="line">    <a class="code hl_enumeration" href="encoder__dir_8h.html#a95d835201d0b8c1d74329992cbb15442">Direction</a> dir = hw.<a class="code hl_function" href="classmodulove_1_1Arythmatik.html#a517ec209225a828265e7c86cc57edff8">EncoderDirection</a>();</div>
+<div class="line">    <span class="comment">// Read the number of rotation clicks since the last encoder handler event.</span></div>
+<div class="line">    <span class="keywordtype">int</span> rotate_count = eb.increment();</div>
+<div class="line"> </div>
+<div class="line">    counter = (dir == DIRECTION_INCREMENT) </div>
+<div class="line">        ? min(counter + rotate_count, OUTPUT_COUNT)</div>
+<div class="line">        : max(counter - rotate_count, 0);</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> UpdatePress(EncoderButton &amp;eb) {</div>
 <div class="line">    <span class="comment">// Reset the counter to zero.</span></div>
 <div class="line">    counter = 0;</div>
 <div class="line">}</div>
-<div class="ttc" id="aclassmodulove_1_1Arythmatik_html"><div class="ttname"><a href="classmodulove_1_1Arythmatik.html">modulove::Arythmatik</a></div><div class="ttdoc">Hardware abstraction wrapper for A-RYTH-MATIK module.</div><div class="ttdef"><b>Definition</b> arythmatik.h:21</div></div>
-<div class="ttc" id="aclassmodulove_1_1Arythmatik_html_a42b6d5a8044b3816795494bdba5e540d"><div class="ttname"><a href="classmodulove_1_1Arythmatik.html#a42b6d5a8044b3816795494bdba5e540d">modulove::Arythmatik::outputs</a></div><div class="ttdeci">DigitalOutput outputs[arythmatik::OUTPUT_COUNT]</div><div class="ttdoc">An array containing each Output object.</div><div class="ttdef"><b>Definition</b> arythmatik.h:42</div></div>
-<div class="ttc" id="aclassmodulove_1_1Arythmatik_html_a4c562a4c0d87aeec8b985b8ec3ce1bc0"><div class="ttname"><a href="classmodulove_1_1Arythmatik.html#a4c562a4c0d87aeec8b985b8ec3ce1bc0">modulove::Arythmatik::eb</a></div><div class="ttdeci">EncoderButton eb</div><div class="ttdoc">EncoderButton object.</div><div class="ttdef"><b>Definition</b> arythmatik.h:41</div></div>
+<div class="ttc" id="aclassmodulove_1_1Arythmatik_html"><div class="ttname"><a href="classmodulove_1_1Arythmatik.html">modulove::Arythmatik</a></div><div class="ttdoc">Hardware abstraction wrapper for A-RYTH-MATIK module.</div><div class="ttdef"><b>Definition</b> arythmatik.h:22</div></div>
+<div class="ttc" id="aclassmodulove_1_1Arythmatik_html_a42b6d5a8044b3816795494bdba5e540d"><div class="ttname"><a href="classmodulove_1_1Arythmatik.html#a42b6d5a8044b3816795494bdba5e540d">modulove::Arythmatik::outputs</a></div><div class="ttdeci">DigitalOutput outputs[arythmatik::OUTPUT_COUNT]</div><div class="ttdef"><b>Definition</b> arythmatik.h:47</div></div>
+<div class="ttc" id="aclassmodulove_1_1Arythmatik_html_a4c562a4c0d87aeec8b985b8ec3ce1bc0"><div class="ttname"><a href="classmodulove_1_1Arythmatik.html#a4c562a4c0d87aeec8b985b8ec3ce1bc0">modulove::Arythmatik::eb</a></div><div class="ttdeci">EncoderButton eb</div><div class="ttdoc">EncoderButton object.</div><div class="ttdef"><b>Definition</b> arythmatik.h:46</div></div>
+<div class="ttc" id="aclassmodulove_1_1Arythmatik_html_a517ec209225a828265e7c86cc57edff8"><div class="ttname"><a href="classmodulove_1_1Arythmatik.html#a517ec209225a828265e7c86cc57edff8">modulove::Arythmatik::EncoderDirection</a></div><div class="ttdeci">arythmatik::Direction EncoderDirection()</div><div class="ttdoc">Parse the configured EncoderButton increment direction.</div><div class="ttdef"><b>Definition</b> arythmatik.cpp:82</div></div>
 <div class="ttc" id="aclassmodulove_1_1Arythmatik_html_a7670f44e9d86ba5b46afcf854df92af4"><div class="ttname"><a href="classmodulove_1_1Arythmatik.html#a7670f44e9d86ba5b46afcf854df92af4">modulove::Arythmatik::Init</a></div><div class="ttdeci">void Init()</div><div class="ttdoc">Initializes the Arduino, and A-RYTH-MATIK hardware.</div><div class="ttdef"><b>Definition</b> arythmatik.cpp:17</div></div>
-<div class="ttc" id="aclassmodulove_1_1Arythmatik_html_a8e112c17541c75406dfa620ee2e36e20"><div class="ttname"><a href="classmodulove_1_1Arythmatik.html#a8e112c17541c75406dfa620ee2e36e20">modulove::Arythmatik::clk</a></div><div class="ttdeci">DigitalInput clk</div><div class="ttdoc">CLK Digital Input object.</div><div class="ttdef"><b>Definition</b> arythmatik.h:43</div></div>
+<div class="ttc" id="aclassmodulove_1_1Arythmatik_html_a8e112c17541c75406dfa620ee2e36e20"><div class="ttname"><a href="classmodulove_1_1Arythmatik.html#a8e112c17541c75406dfa620ee2e36e20">modulove::Arythmatik::clk</a></div><div class="ttdeci">DigitalInput clk</div><div class="ttdoc">CLK Digital Input object.</div><div class="ttdef"><b>Definition</b> arythmatik.h:49</div></div>
 <div class="ttc" id="aclassmodulove_1_1Arythmatik_html_ac00ab3e7dee469ffce99981e36832720"><div class="ttname"><a href="classmodulove_1_1Arythmatik.html#ac00ab3e7dee469ffce99981e36832720">modulove::Arythmatik::ProcessInputs</a></div><div class="ttdeci">void ProcessInputs()</div><div class="ttdoc">Read the state of the CLK and RST inputs.</div><div class="ttdef"><b>Definition</b> arythmatik.cpp:69</div></div>
-<div class="ttc" id="aclassmodulove_1_1Arythmatik_html_ad62526b8ec66fa3f68d97c94d4eaa3a7"><div class="ttname"><a href="classmodulove_1_1Arythmatik.html#ad62526b8ec66fa3f68d97c94d4eaa3a7">modulove::Arythmatik::display</a></div><div class="ttdeci">Adafruit_SSD1306 display</div><div class="ttdoc">OLED display object.</div><div class="ttdef"><b>Definition</b> arythmatik.h:40</div></div>
+<div class="ttc" id="aclassmodulove_1_1Arythmatik_html_ad62526b8ec66fa3f68d97c94d4eaa3a7"><div class="ttname"><a href="classmodulove_1_1Arythmatik.html#ad62526b8ec66fa3f68d97c94d4eaa3a7">modulove::Arythmatik::display</a></div><div class="ttdeci">Adafruit_SSD1306 display</div><div class="ttdoc">OLED display object.</div><div class="ttdef"><b>Definition</b> arythmatik.h:45</div></div>
 <div class="ttc" id="aclassmodulove_1_1DigitalInput_html_a165056e2f2e2201ae2dc21960425f28b"><div class="ttname"><a href="classmodulove_1_1DigitalInput.html#a165056e2f2e2201ae2dc21960425f28b">modulove::DigitalInput::State</a></div><div class="ttdeci">InputState State()</div><div class="ttdoc">Get the current input state of the digital input.</div><div class="ttdef"><b>Definition</b> digital_input.h:64</div></div>
 <div class="ttc" id="aclassmodulove_1_1DigitalOutput_html_a1510005e503d8b3293357ef4208273a1"><div class="ttname"><a href="classmodulove_1_1DigitalOutput.html#a1510005e503d8b3293357ef4208273a1">modulove::DigitalOutput::High</a></div><div class="ttdeci">void High()</div><div class="ttdoc">Sets the cv output HIGH to about 5v.</div><div class="ttdef"><b>Definition</b> digital_output.h:54</div></div>
 <div class="ttc" id="aclassmodulove_1_1DigitalOutput_html_af82726ffc6e19e794d031d93e2d92379"><div class="ttname"><a href="classmodulove_1_1DigitalOutput.html#af82726ffc6e19e794d031d93e2d92379">modulove::DigitalOutput::Low</a></div><div class="ttdeci">void Low()</div><div class="ttdoc">Sets the cv output LOW to 0v.</div><div class="ttdef"><b>Definition</b> digital_output.h:57</div></div>
+<div class="ttc" id="aencoder__dir_8h_html_a95d835201d0b8c1d74329992cbb15442"><div class="ttname"><a href="encoder__dir_8h.html#a95d835201d0b8c1d74329992cbb15442">modulove::arythmatik::Direction</a></div><div class="ttdeci">Direction</div><div class="ttdoc">Enum constants for encoder rotation increment/decrement state.</div><div class="ttdef"><b>Definition</b> encoder_dir.h:18</div></div>
 </div><!-- fragment --><h1><a class="anchor" id="autotoc_md3"></a>
 Example usage for SyncLFO</h1>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;src/libmodulove/arythmatik.h&quot;</span></div>

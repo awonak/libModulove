@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['state_0',['State',['../classmodulove_1_1DigitalInput.html#a165056e2f2e2201ae2dc21960425f28b',1,'modulove::DigitalInput']]],
-  ['synclfo_1',['SyncLFO',['../classmodulove_1_1SyncLFO.html#aba3ce54d3982850fefba897f7171f4ff',1,'modulove::SyncLFO']]]
+  ['read_0',['Read',['../classmodulove_1_1AnalogInput.html#acada7be45d9b7e12eafbecbceb57296a',1,'modulove::AnalogInput']]],
+  ['rotate_1',['Rotate',['../encoder__dir_8h.html#a8fd106914cc1f33225d4b4f9ea2642da',1,'modulove::arythmatik']]]
 ];

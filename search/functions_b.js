@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['_7earythmatik_0',['~Arythmatik',['../classmodulove_1_1Arythmatik.html#a5207137670427c0caee37e9f4c6752d4',1,'modulove::Arythmatik']]],
-  ['_7esynclfo_1',['~SyncLFO',['../classmodulove_1_1SyncLFO.html#a7c2cc742ef90bede8d93a6fe571986e1',1,'modulove::SyncLFO']]]
+  ['update_0',['update',['../classmodulove_1_1AnalogOutput.html#ac4af24091469121bcb3e86150bc00df9',1,'modulove::AnalogOutput::Update()'],['../classmodulove_1_1DigitalOutput.html#ab31dfb2ad9c0e9db3aee02f319f6a14d',1,'modulove::DigitalOutput::Update()']]],
+  ['update10bit_1',['Update10bit',['../classmodulove_1_1AnalogOutput.html#a58a182b6ab2f1b2ff9e5182200dcf251',1,'modulove::AnalogOutput']]]
 ];

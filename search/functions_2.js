@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['getvalue_0',['GetValue',['../classmodulove_1_1AnalogOutput.html#af95a1cc8a4e0204684fb971ab81b4437',1,'modulove::AnalogOutput']]]
+  ['encoderdirection_0',['EncoderDirection',['../classmodulove_1_1Arythmatik.html#a517ec209225a828265e7c86cc57edff8',1,'modulove::Arythmatik']]]
 ];
