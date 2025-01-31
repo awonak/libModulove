@@ -66,10 +66,18 @@ class DigitalInput {
     /**
      * @brief Current cv state represented as a bool.
      * 
-     * @return true if cv signal is high
-     * @return false if cv signal is low
+     * @return true if cv signal went high this loop.
+     * @return false if cv signal went high this loop.
      */
     inline bool On() { return on_; }
+
+    /**
+     * @brief Read live pin state as a bool.
+     * 
+     * @return true if cv signal is high.
+     * @return false if cv signal is low.
+     */
+    inline bool Read() { return digitalRead(cv_pin_); }
 
    private:
     uint8_t cv_pin_;

@@ -72,9 +72,9 @@ void Arythmatik::ProcessInputs() {
     eb.update();
 
     // Clock In LED indicator mirrors the clock input.
-    if (clk.State() == DigitalInput::STATE_RISING) {
+    if (clk.State() == DigitalInput::STATE_RISING && !config.DisableEchoClock) {
         digitalWrite(CLOCK_LED, HIGH);
-    } else if (clk.State() == DigitalInput::STATE_FALLING) {
+    } else if (clk.State() == DigitalInput::STATE_FALLING && !config.DisableEchoClock) {
         digitalWrite(CLOCK_LED, LOW);
     }
 }

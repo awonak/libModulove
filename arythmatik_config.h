@@ -21,6 +21,9 @@ struct Config {
 
     // Set ReverseEncoder to true if rotating the encoder counterclockwise should increment.
     bool ReverseEncoder;
+
+    // Disable the echoing the CLK input on the facepanel Clock symbol.
+    bool DisableEchoClock; 
 };
 
 }  // namespace arythmatik
