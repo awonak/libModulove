@@ -106,6 +106,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Process</b> ()</td></
 <tr class="memitem:a439643c319e62bb9ae22ab4b9fcc8885" id="r_a439643c319e62bb9ae22ab4b9fcc8885"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmodulove_1_1DigitalInput.html#a439643c319e62bb9ae22ab4b9fcc8885">On</a> ()</td></tr>
 <tr class="memdesc:a439643c319e62bb9ae22ab4b9fcc8885"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current cv state represented as a bool.  <br /></td></tr>
 <tr class="separator:a439643c319e62bb9ae22ab4b9fcc8885"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad075c114fb744c7364314c90ceb5b7d8" id="r_ad075c114fb744c7364314c90ceb5b7d8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmodulove_1_1DigitalInput.html#ad075c114fb744c7364314c90ceb5b7d8">Read</a> ()</td></tr>
+<tr class="memdesc:ad075c114fb744c7364314c90ceb5b7d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read live pin state as a bool.  <br /></td></tr>
+<tr class="separator:ad075c114fb744c7364314c90ceb5b7d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="a24eb8c9931ebf5f817b4954775fbdb74" name="a24eb8c9931ebf5f817b4954775fbdb74"></a>
@@ -166,9 +169,39 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Process</b> ()</td></
 </div><div class="memdoc">
 
 <p>Current cv state represented as a bool. </p>
-<dl class="section return"><dt>Returns</dt><dd>true if cv signal is high </dd>
+<dl class="section return"><dt>Returns</dt><dd>true if cv signal went high this loop. </dd>
 <dd>
-false if cv signal is low </dd></dl>
+false if cv signal went high this loop. </dd></dl>
+
+</div>
+</div>
+<a id="ad075c114fb744c7364314c90ceb5b7d8" name="ad075c114fb744c7364314c90ceb5b7d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad075c114fb744c7364314c90ceb5b7d8">&#9670;&#160;</a></span>Read()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool modulove::DigitalInput::Read </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Read live pin state as a bool. </p>
+<dl class="section return"><dt>Returns</dt><dd>true if cv signal is high. </dd>
+<dd>
+false if cv signal is low. </dd></dl>
 
 </div>
 </div>
