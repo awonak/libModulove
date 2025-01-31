@@ -4,9 +4,9 @@
  * @brief Class for interacting with trigger / gate inputs.
  * @version 0.1
  * @date 2023-09-06
- * 
+ *
  * @copyright Copyright (c) 2023
- * 
+ *
  */
 #ifndef DIGITAL_INPUT_H
 #define DIGITAL_INPUT_H
@@ -28,10 +28,10 @@ class DigitalInput {
     ~DigitalInput() {}
 
     /**
-    * @brief Initializes a CV Input object.
-    * 
-    * @param cv_pin gpio pin for the cv output.
-    */
+     * @brief Initializes a CV Input object.
+     *
+     * @param cv_pin gpio pin for the cv output.
+     */
     void Init(uint8_t cv_pin) {
         pinMode(cv_pin, INPUT);
         cv_pin_ = cv_pin;
@@ -39,7 +39,7 @@ class DigitalInput {
 
     /**
      * @brief Read the state of the cv input.
-     * 
+     *
      */
     void Process() {
         old_read_ = read_;
@@ -58,14 +58,14 @@ class DigitalInput {
 
     /**
      * @brief Get the current input state of the digital input.
-     * 
-     * @return InputState 
+     *
+     * @return InputState
      */
     inline InputState State() { return state_; }
 
     /**
      * @brief Current cv state represented as a bool.
-     * 
+     *
      * @return true if cv signal went high this loop.
      * @return false if cv signal went high this loop.
      */
@@ -73,7 +73,7 @@ class DigitalInput {
 
     /**
      * @brief Read live pin state as a bool.
-     * 
+     *
      * @return true if cv signal is high.
      * @return false if cv signal is low.
      */
