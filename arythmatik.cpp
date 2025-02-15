@@ -14,6 +14,9 @@
 using namespace modulove;
 using namespace arythmatik;
 
+static void (*ClockHandler)(void);
+static void (*ResetHandler)(void);
+
 void Arythmatik::Init() {
     InitInputs();
     InitOutputs();
@@ -45,6 +48,22 @@ void Arythmatik::InitInputs() {
         clk.Init(CLK_PIN);
         rst.Init(RST_PIN);
     }
+
+    // Pin Change Interrupt for CLK & RST.
+    // Thanks to Sitka Instruments for the tip and docs from https://dronebotworkshop.com/interrupts/
+    // Enable PCIE0 Bit0 = 1 (Port B)
+    PCICR |= B00000001;
+    // Enable PCINT5 & PCINT3 (Pin 13 & Pin 11)
+    PCMSK0 |= B00101000;
+    // ISR (PCINT0_vect) - ISR for Port B (D8 - D13)
+}
+
+void Arythmatik::AttachClockHandler(void (*callback)(DigitalInput)) { 
+    ClockHandler = callback;
+}
+
+void Arythmatik::AttachResetHandler(void (*callback)(void)) { 
+    ResetHandler = callback; 
 }
 
 void Arythmatik::InitOutputs() {
@@ -82,3 +101,10 @@ void Arythmatik::ProcessInputs() {
 Direction Arythmatik::EncoderDirection() {
     return Rotate(eb.increment(), config.ReverseEncoder);
 }
+
+// Define ISR
+// Pin Change Interrupt on Port B (D13 CLK & D11 RST).
+ISR(PCINT0_vect) {
+    ClockHandler();
+    ResetHandler();
+};
