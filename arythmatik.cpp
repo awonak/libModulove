@@ -58,7 +58,7 @@ void Arythmatik::InitInputs() {
     // ISR (PCINT0_vect) - ISR for Port B (D8 - D13)
 }
 
-void Arythmatik::AttachClockHandler(void (*callback)(DigitalInput)) { 
+void Arythmatik::AttachClockHandler(void (*callback)(void)) { 
     ClockHandler = callback;
 }
 
