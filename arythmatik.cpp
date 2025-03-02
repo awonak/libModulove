@@ -16,6 +16,8 @@ using namespace arythmatik;
 
 static void (*ClockHandler)(void);
 static void (*ResetHandler)(void);
+void noop() {};
+
 
 void Arythmatik::Init() {
     InitInputs();
@@ -49,6 +51,10 @@ void Arythmatik::InitInputs() {
         rst.Init(RST_PIN);
     }
 
+    // If the handler has not yet been set, assign a noop function.
+    if (ClockHandler == NULL) ClockHandler = noop;
+    if (ResetHandler == NULL) ResetHandler = noop;
+
     // Pin Change Interrupt for CLK & RST.
     // Thanks to Sitka Instruments for the tip and docs from https://dronebotworkshop.com/interrupts/
     // Enable PCIE0 Bit0 = 1 (Port B)
@@ -58,12 +64,12 @@ void Arythmatik::InitInputs() {
     // ISR (PCINT0_vect) - ISR for Port B (D8 - D13)
 }
 
-void Arythmatik::AttachClockHandler(void (*callback)(void)) { 
+void Arythmatik::AttachClockHandler(void (*callback)(void)) {
     ClockHandler = callback;
 }
 
-void Arythmatik::AttachResetHandler(void (*callback)(void)) { 
-    ResetHandler = callback; 
+void Arythmatik::AttachResetHandler(void (*callback)(void)) {
+    ResetHandler = callback;
 }
 
 void Arythmatik::InitOutputs() {
