@@ -10,5 +10,6 @@ var searchData=
   ['arythmatik_7',['arythmatik',['../classmodulove_1_1Arythmatik.html',1,'modulove::Arythmatik'],['../classmodulove_1_1Arythmatik.html#a5bcdb82e38664ecb99af06eb89354a4d',1,'modulove::Arythmatik::Arythmatik()']]],
   ['arythmatik_2ecpp_8',['arythmatik.cpp',['../arythmatik_8cpp.html',1,'']]],
   ['arythmatik_5fconfig_2eh_9',['arythmatik_config.h',['../arythmatik__config_8h.html',1,'']]],
-  ['arythmatik_5fperipherials_2eh_10',['arythmatik_peripherials.h',['../arythmatik__peripherials_8h.html',1,'']]]
+  ['arythmatik_5fperipherials_2eh_10',['arythmatik_peripherials.h',['../arythmatik__peripherials_8h.html',1,'']]],
+  ['attachclockhandler_11',['AttachClockHandler',['../classmodulove_1_1Arythmatik.html#a1c46ed991261267658878b835ca954af',1,'modulove::Arythmatik']]]
 ];

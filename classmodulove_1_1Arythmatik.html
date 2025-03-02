@@ -115,6 +115,12 @@ Public Member Functions</h2></td></tr>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>Init</b> ()</td></tr>
 <tr class="memdesc:a7670f44e9d86ba5b46afcf854df92af4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the Arduino, and A-RYTH-MATIK hardware. <br /></td></tr>
 <tr class="separator:a7670f44e9d86ba5b46afcf854df92af4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c46ed991261267658878b835ca954af" id="r_a1c46ed991261267658878b835ca954af"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmodulove_1_1Arythmatik.html#a1c46ed991261267658878b835ca954af">AttachClockHandler</a> (void(*callback)(void))</td></tr>
+<tr class="memdesc:a1c46ed991261267658878b835ca954af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pin change handlers.  <br /></td></tr>
+<tr class="separator:a1c46ed991261267658878b835ca954af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b51987fd6012e913358fce0c9b55f0e" id="r_a6b51987fd6012e913358fce0c9b55f0e"><td class="memItemLeft" align="right" valign="top"><a id="a6b51987fd6012e913358fce0c9b55f0e" name="a6b51987fd6012e913358fce0c9b55f0e"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>AttachResetHandler</b> (void(*callback)(void))</td></tr>
+<tr class="separator:a6b51987fd6012e913358fce0c9b55f0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac00ab3e7dee469ffce99981e36832720" id="r_ac00ab3e7dee469ffce99981e36832720"><td class="memItemLeft" align="right" valign="top"><a id="ac00ab3e7dee469ffce99981e36832720" name="ac00ab3e7dee469ffce99981e36832720"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>ProcessInputs</b> ()</td></tr>
 <tr class="memdesc:ac00ab3e7dee469ffce99981e36832720"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read the state of the CLK and RST inputs. <br /></td></tr>
@@ -150,6 +156,33 @@ EncoderButton&#160;</td><td class="memItemRight" valign="bottom"><b>eb</b></td><
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Hardware abstraction wrapper for A-RYTH-MATIK module. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a1c46ed991261267658878b835ca954af" name="a1c46ed991261267658878b835ca954af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c46ed991261267658878b835ca954af">&#9670;&#160;</a></span>AttachClockHandler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Arythmatik::AttachClockHandler </td>
+          <td>(</td>
+          <td class="paramtype">void(*)(void)&#160;</td>
+          <td class="paramname"><em>callback</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Pin change handlers. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">callback</td><td><br  />
+ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a517ec209225a828265e7c86cc57edff8" name="a517ec209225a828265e7c86cc57edff8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a517ec209225a828265e7c86cc57edff8">&#9670;&#160;</a></span>EncoderDirection()</h2>
 

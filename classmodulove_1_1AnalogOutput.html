@@ -97,14 +97,14 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a58a182b6ab2f1b2ff9e5182200dcf251"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acc41e837d57ff54b7abc1b3d29623568" id="r_acc41e837d57ff54b7abc1b3d29623568"><td class="memItemLeft" align="right" valign="top"><a id="acc41e837d57ff54b7abc1b3d29623568" name="acc41e837d57ff54b7abc1b3d29623568"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>High</b> ()</td></tr>
-<tr class="memdesc:acc41e837d57ff54b7abc1b3d29623568"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the cv output HIGH to about 5v. <br /></td></tr>
+<tr class="memdesc:acc41e837d57ff54b7abc1b3d29623568"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the cv output HIGH to about 10v. <br /></td></tr>
 <tr class="separator:acc41e837d57ff54b7abc1b3d29623568"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa1d2d5d41043a0cc68ee9536d89b9683" id="r_aa1d2d5d41043a0cc68ee9536d89b9683"><td class="memItemLeft" align="right" valign="top"><a id="aa1d2d5d41043a0cc68ee9536d89b9683" name="aa1d2d5d41043a0cc68ee9536d89b9683"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>Low</b> ()</td></tr>
 <tr class="memdesc:aa1d2d5d41043a0cc68ee9536d89b9683"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the cv output LOW to 0v. <br /></td></tr>
 <tr class="separator:aa1d2d5d41043a0cc68ee9536d89b9683"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af95a1cc8a4e0204684fb971ab81b4437" id="r_af95a1cc8a4e0204684fb971ab81b4437"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmodulove_1_1AnalogOutput.html#af95a1cc8a4e0204684fb971ab81b4437">GetValue</a> ()</td></tr>
-<tr class="memdesc:af95a1cc8a4e0204684fb971ab81b4437"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return an integer value between 0 and 1023 (0..5v) representing the current value of the output.  <br /></td></tr>
+<tr class="memdesc:af95a1cc8a4e0204684fb971ab81b4437"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return an integer value between 0 and 1023 (0..10v) representing the current value of the output.  <br /></td></tr>
 <tr class="separator:af95a1cc8a4e0204684fb971ab81b4437"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -131,7 +131,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Low</b> ()</td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Return an integer value between 0 and 1023 (0..5v) representing the current value of the output. </p>
+<p>Return an integer value between 0 and 1023 (0..10v) representing the current value of the output. </p>
 <dl class="section return"><dt>Returns</dt><dd>integer value of cv from 0 to 1023. </dd></dl>
 
 </div>
@@ -242,7 +242,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Low</b> ()</td></tr>
 <p>Set the output pin to the given 8 bit value. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">val</td><td>Arduino analog value between 0 and 255 (0..5v). </td></tr>
+    <tr><td class="paramname">val</td><td>Arduino analog value between 0 and 255 (0..10v). </td></tr>
   </table>
   </dd>
 </dl>
@@ -276,7 +276,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Low</b> ()</td></tr>
 <p>Set the output pin to the given 10 bit value. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">val</td><td>Arduino analog value between 0 and 1024 (0..5v). </td></tr>
+    <tr><td class="paramname">val</td><td>Arduino analog value between 0 and 1024 (0..10v). </td></tr>
   </table>
   </dd>
 </dl>
