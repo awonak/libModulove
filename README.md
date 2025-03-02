@@ -45,7 +45,8 @@ using namespace arythmatik;
 // Declare A-RYTH-MATIK hardware variable.
 Arythmatik hw;
 
-byte counter = 0;
+// Since counter is modified in the CLK/RST handler, it should be volatile.
+volatile int counter;
 
 void setup() {
     // Inside the setup, set config values prior to calling hw.Init().
@@ -60,6 +61,10 @@ void setup() {
     hw.eb.setEncoderHandler(UpdateRotate);
     hw.eb.setClickHandler(UpdatePress);
 
+    // Attach CLK & RST pin change handlers.
+    hw.AttachClockHandler(HandleClockPinChange);
+    hw.AttachResetHandler(HandleResetPinChange);
+
     // Initialize the A-RYTH-MATIK peripherials.
     hw.Init();
 }
@@ -67,11 +72,6 @@ void setup() {
 void loop() {
     // Read cv inputs and process encoder state to determine state for this loop.
     hw.ProcessInputs();
-
-    // Advance the counter on CLK input
-    if (hw.clk.State() == DigitalInput::STATE_RISING) {
-        counter = ++counter % OUTPUT_COUNT;
-    }
 
     // Activate the current counter output.
     for (int i = 0; i < OUTPUT_COUNT; i++) {
@@ -85,6 +85,19 @@ void loop() {
     hw.display.setCursor(SCREEN_HEIGHT/2, 0);
     hw.display.println("Counter: " + String(counter));
     hw.display.display();
+}
+
+void HandleClockPinChange() {
+    // Advance the counter on CLK input
+    if (hw.clk.Read() == HIGH) {
+        counter = ++counter % OUTPUT_COUNT;
+    }
+}
+
+void HandleResetPinChange() {
+    if (hw.rst.Read() == HIGH) {
+        counter = 0;
+    }
 }
 
 void UpdateRotate(EncoderButton &eb) {

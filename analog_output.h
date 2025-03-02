@@ -46,7 +46,7 @@ class AnalogOutput {
     /**
      * @brief Set the output pin to the given 8 bit value.
      *
-     * @param val Arduino analog value between 0 and 255 (0..5v).
+     * @param val Arduino analog value between 0 and 255 (0..10v).
      */
     inline void Update(int val) {
         update((val <= MAX_OUTPUT) ? val : MAX_OUTPUT);
@@ -55,7 +55,7 @@ class AnalogOutput {
     /**
      * @brief Set the output pin to the given 10 bit value.
      *
-     * @param val Arduino analog value between 0 and 1024 (0..5v).
+     * @param val Arduino analog value between 0 and 1024 (0..10v).
      */
     inline void Update10bit(int val) {
         val = val <= MAX_OUTPUT_10BIT ? val : MAX_OUTPUT_10BIT;
@@ -63,14 +63,14 @@ class AnalogOutput {
         update(val);
     }
 
-    /// @brief Sets the cv output HIGH to about 5v.
+    /// @brief Sets the cv output HIGH to about 10v.
     inline void High() { update(MAX_OUTPUT); }
 
     /// @brief Sets the cv output LOW to 0v.
     inline void Low() { update(0); }
 
     /**
-     * @brief Return an integer value between 0 and 1023 (0..5v) representing the current value of the output.
+     * @brief Return an integer value between 0 and 1023 (0..10v) representing the current value of the output.
      *
      * @return integer value of cv from 0 to 1023.
      */

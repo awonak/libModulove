@@ -35,6 +35,11 @@ class Arythmatik {
     /// @brief Initializes the Arduino, and A-RYTH-MATIK hardware.
     void Init();
 
+    /// @brief Pin change handlers
+    /// @param callback 
+    void AttachClockHandler(void (*callback)(void));
+    void AttachResetHandler(void (*callback)(void)); 
+
     /// @brief Read the state of the CLK and RST inputs.
     void ProcessInputs();
 
